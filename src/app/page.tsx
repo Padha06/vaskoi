@@ -19,13 +19,13 @@ export default function Home() {
   let preloaderInterval = null;
 
   function runPreloader() {
-    const preloader = document.getElementById('vaskoi-preloader');
-    const percentEl = document.getElementById('preloader-percent');
-    const barEl = document.getElementById('preloader-bar');
-    const stepEl = document.getElementById('preloader-step-text');
-    const log1 = document.getElementById('preloader-log-1');
-    const log2 = document.getElementById('preloader-log-2');
-    const log3 = document.getElementById('preloader-log-3');
+    const preloader = (document as any).getElementById('vaskoi-preloader');
+    const percentEl = (document as any).getElementById('preloader-percent');
+    const barEl = (document as any).getElementById('preloader-bar');
+    const stepEl = (document as any).getElementById('preloader-step-text');
+    const log1 = (document as any).getElementById('preloader-log-1');
+    const log2 = (document as any).getElementById('preloader-log-2');
+    const log3 = (document as any).getElementById('preloader-log-3');
 
     if (!preloader) return;
 
@@ -86,9 +86,9 @@ export default function Home() {
     }, 38);
   }
 
-  function skipPreloader() {
+  function (window as any).skipPreloader() {
     if (preloaderInterval) clearInterval(preloaderInterval);
-    const preloader = document.getElementById('vaskoi-preloader');
+    const preloader = (document as any).getElementById('vaskoi-preloader');
     if (preloader) {
       preloader.style.opacity = '0';
       preloader.style.transform = 'scale(1.04)';
@@ -97,7 +97,7 @@ export default function Home() {
     }
   }
 
-  function replayPreloader() {
+  function (window as any).replayPreloader() {
     runPreloader();
   }
 
@@ -177,7 +177,7 @@ export default function Home() {
 </div>
 
 <div className="w-full h-1.5 bg-surface-elevated border border-border-subtle relative overflow-hidden mb-4 p-[1px]">
-<div className="h-full bg-gradient-to-r from-border-interactive via-infrared-bright to-white transition-all duration-100 ease-out relative" id="preloader-bar" style="width: 0%;">
+<div className="h-full bg-gradient-to-r from-border-interactive via-infrared-bright to-white transition-all duration-100 ease-out relative" id="preloader-bar" style={{"width":"0%"}}>
 
 <div className="absolute top-0 right-0 h-full w-2 bg-white shadow-[0_0_12px_#ff2a1b]"></div>
 </div>
@@ -202,13 +202,13 @@ export default function Home() {
 <span className="text-border-interactive">[SYS]</span>
 <span>INITIALIZING INDUSTRIAL RIG // SHUBAM PADHA</span>
 </div>
-<button className="px-2.5 py-1 bg-surface-elevated border border-border-subtle hover:border-border-interactive hover:text-white text-text-secondary transition-colors text-xs font-label-caps uppercase tracking-wider flex items-center gap-1" onclick="skipPreloader()">
+<button className="px-2.5 py-1 bg-surface-elevated border border-border-subtle hover:border-border-interactive hover:text-white text-text-secondary transition-colors text-xs font-label-caps uppercase tracking-wider flex items-center gap-1" onClick={() => {(window as any).skipPreloader()}}>
 <span>SKIP_INIT</span>
 <span className="material-symbols-outlined text-[14px]">fast_forward</span>
 </button>
 </div>
 </div>
-<header className="fixed top-0 left-0 w-full z-50 bg-surface-deep/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div className="h-16 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div className="flex items-center gap-space-lg"><a className="flex items-center gap-space-sm group" data-path="home" href="#"><span className="font-headline-sm text-headline-sm uppercase tracking-tight text-text-primary group-hover:text-primary transition-colors">VASKOI</span><span className="font-code-inline text-code-inline text-text-tertiary">{"//DEV"}</span></a><div className="hidden sm:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle"><span className="w-2 h-2 bg-tertiary animate-pulse"></span><span className="font-label-caps text-label-caps uppercase text-text-secondary">Available for Q2 Projects</span></div></div><nav className="hidden lg:flex items-center gap-space-xl" data-active-classes="text-primary border-b border-border-interactive"><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="work" href="#">Work</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="services" href="#">Services</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="process" href="#">Process</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="stack" href="#">Stack</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="contact" href="#">Contact</a></nav><div className="flex items-center gap-space-md"><button className="inline-flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle text-text-secondary hover:text-text-primary hover:border-border-interactive font-code-inline text-body-sm transition-all" id="replay-boot-btn" onclick="replayPreloader()" title="Replay System Boot Animation"><span className="w-1.5 h-1.5 bg-border-interactive animate-pulse"></span><span className="hidden sm:inline">[ REPLAY LOADER ]</span><span className="material-symbols-outlined text-[14px]">replay</span></button><a className="hidden md:inline-flex items-center justify-center px-space-md py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-infrared-bright transition-all" data-path="contact" href="#"><span className="mr-space-xs">Start a Project</span><span className="material-symbols-outlined text-[14px]">arrow_forward</span></a><div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main className="w-full pt-16 bg-surface-deep"><div className="flex flex-col w-full selection:bg-border-interactive selection:text-white overflow-hidden">
+<header className="fixed top-0 left-0 w-full z-50 bg-surface-deep/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div className="h-16 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div className="flex items-center gap-space-lg"><a className="flex items-center gap-space-sm group" data-path="home" href="#"><span className="font-headline-sm text-headline-sm uppercase tracking-tight text-text-primary group-hover:text-primary transition-colors">VASKOI</span><span className="font-code-inline text-code-inline text-text-tertiary">{"//DEV"}</span></a><div className="hidden sm:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle"><span className="w-2 h-2 bg-tertiary animate-pulse"></span><span className="font-label-caps text-label-caps uppercase text-text-secondary">Available for Q2 Projects</span></div></div><nav className="hidden lg:flex items-center gap-space-xl" data-active-classes="text-primary border-b border-border-interactive"><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="work" href="#">Work</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="services" href="#">Services</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="process" href="#">Process</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="stack" href="#">Stack</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="contact" href="#">Contact</a></nav><div className="flex items-center gap-space-md"><button className="inline-flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle text-text-secondary hover:text-text-primary hover:border-border-interactive font-code-inline text-body-sm transition-all" id="replay-boot-btn" onClick={() => {(window as any).replayPreloader()}} title="Replay System Boot Animation"><span className="w-1.5 h-1.5 bg-border-interactive animate-pulse"></span><span className="hidden sm:inline">[ REPLAY LOADER ]</span><span className="material-symbols-outlined text-[14px]">replay</span></button><a className="hidden md:inline-flex items-center justify-center px-space-md py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-infrared-bright transition-all" data-path="contact" href="#"><span className="mr-space-xs">Start a Project</span><span className="material-symbols-outlined text-[14px]">arrow_forward</span></a><div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main className="w-full pt-16 bg-surface-deep"><div className="flex flex-col w-full selection:bg-border-interactive selection:text-white overflow-hidden">
 
 <section className="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden px-gutter-mobile lg:px-gutter-desktop pt-space-xl pb-space-2xl bg-surface-deep">
 
@@ -1022,7 +1022,7 @@ export default function Home() {
 </div>
 
 <div className="lg:col-span-7 bg-surface-deep p-space-xl lg:p-space-2xl border border-border-subtle">
-<form className="flex flex-col gap-space-lg" id="project-form" onSubmit={(e) => { e.preventDefault(); const el = document.getElementById('form-feedback'); if(el) el.classList.remove('hidden'); }}>
+<form className="flex flex-col gap-space-lg" id="project-form" onSubmit={(e) => { e.preventDefault(); const el = (document as any).getElementById('form-feedback'); if(el) el.classList.remove('hidden'); }}>
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
 <div className="flex flex-col gap-space-xs">
 <label className="font-label-caps text-label-caps uppercase text-text-secondary" htmlFor="contact-name">
