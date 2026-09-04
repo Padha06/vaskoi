@@ -1,3 +1,4 @@
+"use client";
 export default function Home() {
   return (
     <>
@@ -816,23 +817,23 @@ export default function Home() {
 </div>
 
 <div className="lg:col-span-7 bg-surface-deep p-space-xl lg:p-space-2xl border border-border-subtle">
-<form className="flex flex-col gap-space-lg" id="project-form" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+<form className="flex flex-col gap-space-lg" id="project-form" onSubmit={(e) => { e.preventDefault(); const el = document.getElementById('form-feedback'); if(el) el.classList.remove('hidden'); }}>
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
 <div className="flex flex-col gap-space-xs">
-<label className="font-label-caps text-label-caps uppercase text-text-secondary" for="contact-name">
+<label className="font-label-caps text-label-caps uppercase text-text-secondary" htmlFor="contact-name">
                 Your Name / Representative
               </label>
-<input className="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="contact-name" placeholder="e.g. Alex Chen" required="" type="text"/>
+<input className="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="contact-name" placeholder="e.g. Alex Chen" required={true} type="text"/>
 </div>
 <div className="flex flex-col gap-space-xs">
-<label className="font-label-caps text-label-caps uppercase text-text-secondary" for="contact-email">
+<label className="font-label-caps text-label-caps uppercase text-text-secondary" htmlFor="contact-email">
                 Work Email Address
               </label>
-<input className="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="contact-email" placeholder="alex@company.com" required="" type="email"/>
+<input className="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="contact-email" placeholder="alex@company.com" required={true} type="email"/>
 </div>
 </div>
 <div className="flex flex-col gap-space-xs">
-<label className="font-label-caps text-label-caps uppercase text-text-secondary" for="system-category">
+<label className="font-label-caps text-label-caps uppercase text-text-secondary" htmlFor="system-category">
               Primary System Scope
             </label>
 <select className="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="system-category">
@@ -844,10 +845,10 @@ export default function Home() {
 </select>
 </div>
 <div className="flex flex-col gap-space-xs">
-<label className="font-label-caps text-label-caps uppercase text-text-secondary" for="project-summary">
+<label className="font-label-caps text-label-caps uppercase text-text-secondary" htmlFor="project-summary">
               Project Specification &amp; Timeline Targets
             </label>
-<textarea className="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors resize-none" id="project-summary" placeholder="Provide high-level architecture details, timeline expectations, or pain points in your current stack..." required="" rows="4"></textarea>
+<textarea className="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors resize-none" id="project-summary" placeholder="Provide high-level architecture details, timeline expectations, or pain points in your current stack..." required={true} rows={4}></textarea>
 </div>
 
 <div className="hidden p-space-md bg-surface-elevated border border-tertiary text-tertiary font-code-inline text-body-sm flex items-center gap-space-sm" id="form-feedback">
