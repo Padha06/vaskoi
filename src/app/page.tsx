@@ -214,7 +214,7 @@ export default function Home() {
 </button>
 </div>
 </div>
-<header className="fixed top-0 left-0 w-full z-50 bg-surface-deep/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div className="h-16 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div className="flex items-center gap-space-lg shrink-0"><a className="flex items-center gap-space-sm group" data-path="home" href="#"><Image src="/VASKOIlOGO.PNG" alt="VASKOI Logo" width={160} height={56} className="h-10 md:h-12 w-auto object-contain" /></a><div className="hidden sm:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle"><span className="w-2 h-2 bg-tertiary animate-pulse"></span><span className="font-label-caps text-label-caps uppercase text-text-secondary">Available for Q2 Projects</span></div></div><AnimatedTopDock /><div className="flex items-center gap-space-md"><a className="hidden md:inline-flex items-center justify-center px-space-md py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-infrared-bright transition-all" data-path="contact" href="#"><span className="mr-space-xs">Start a Project</span><span className="material-symbols-outlined text-[14px]">arrow_forward</span></a></div></div></header><main className="w-full pt-16 bg-surface-deep"><div className="flex flex-col w-full selection:bg-border-interactive selection:text-white overflow-hidden">
+<header className="fixed top-0 left-0 w-full z-50 bg-surface-deep/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div className="h-16 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div className="flex items-center gap-space-lg shrink-0"><a className="flex items-center gap-space-sm group" data-path="home" href="#"><Image src="/VASKOIlOGO.PNG" alt="VASKOI Logo" width={192} height={67} className="h-12 md:h-[3.5rem] w-auto object-contain translate-y-1" /></a><div className="hidden sm:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle"><span className="w-2 h-2 bg-tertiary animate-pulse"></span><span className="font-label-caps text-label-caps uppercase text-text-secondary">Available for Q2 Projects</span></div></div><AnimatedTopDock /><div className="flex items-center gap-space-md"><a className="hidden md:inline-flex items-center justify-center px-space-md py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-infrared-bright transition-all" data-path="contact" href="#"><span className="mr-space-xs">Start a Project</span><span className="material-symbols-outlined text-[14px]">arrow_forward</span></a></div></div></header><main className="w-full pt-16 bg-surface-deep"><div className="flex flex-col w-full selection:bg-border-interactive selection:text-white overflow-hidden">
 
 <section className="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden px-gutter-mobile lg:px-gutter-desktop pt-space-xl pb-space-2xl bg-surface-deep">
 
@@ -309,7 +309,7 @@ export default function Home() {
 </div>
 </section>
 
-<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-5xl" id="case-studies">
+<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl lg:py-space-xl lg:py-space-3xl" id="case-studies">
 
 <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
 <div>
@@ -468,7 +468,7 @@ export default function Home() {
 </div>
 </section>
 
-<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-xl lg:py-space-3xl">
 <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
 <div>
 <div className="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
@@ -667,7 +667,7 @@ export default function Home() {
 </div>
 </section>
 
-<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<section id="services" className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-xl lg:py-space-3xl">
 <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
 <div>
 <div className="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
@@ -765,7 +765,7 @@ export default function Home() {
 </div>
 </section>
 
-<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<section id="process" className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-xl lg:py-space-3xl">
 <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
 <div>
 <div className="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
@@ -838,7 +838,7 @@ export default function Home() {
 </div>
 </section>
 
-<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<section id="stack" className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-xl lg:py-space-3xl">
 <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
 <div>
 <div className="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
@@ -977,8 +977,8 @@ export default function Home() {
 </div>
 </section>
 
-<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-5xl" id="contact-terminal">
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl bg-surface-base border border-border-subtle p-space-xl lg:p-space-3xl relative overflow-hidden">
+<section className="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl lg:py-space-xl lg:py-space-3xl" id="contact-terminal">
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl bg-surface-base border border-border-subtle p-space-md md:p-space-xl lg:p-space-3xl relative overflow-hidden">
 
 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-border-interactive via-infrared-bright to-transparent"></div>
 
