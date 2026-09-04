@@ -1,11 +1,216 @@
 "use client";
+
+import Script from 'next/script';
+
 export default function Home() {
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-surface-deep/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div className="h-16 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div className="flex items-center gap-space-lg"><a className="flex items-center gap-space-sm group" data-path="home" href="#"><span className="font-headline-sm text-headline-sm uppercase tracking-tight text-text-primary group-hover:text-primary transition-colors">VASKOI</span><span className="font-code-inline text-code-inline text-text-tertiary">{"//DEV"}</span></a><div className="hidden sm:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle"><span className="w-2 h-2 bg-tertiary animate-pulse"></span><span className="font-label-caps text-label-caps uppercase text-text-secondary">Available for Q2 Projects</span></div></div><nav className="hidden lg:flex items-center gap-space-xl" data-active-classes="text-primary border-b border-border-interactive"><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="work" href="#">Work</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="services" href="#">Services</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="process" href="#">Process</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="stack" href="#">Stack</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="contact" href="#">Contact</a></nav><div className="flex items-center gap-space-md"><a className="hidden md:inline-flex items-center justify-center px-space-md py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-infrared-bright transition-all" data-path="contact" href="#"><span className="mr-space-xs">Start a Project</span><span className="material-symbols-outlined text-[14px]">arrow_forward</span></a><div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main className="w-full pt-16 bg-surface-deep"><div className="flex flex-col w-full selection:bg-border-interactive selection:text-white overflow-hidden">
+      <Script id="vaskoi-logic" strategy="lazyOnload">
+        {`
+          
+  // Preloader Logic
+  const steps = [
+    { percent: 18, text: "ESTABLISHING SECURE PROTOCOL...", log: "> HANDSHAKE: VASKOI_CORE_TLS ACTIVE" },
+    { percent: 45, text: "LOADING DYNAMICS 365 BC ARCHITECTURE...", log: "> ATTACHING AL EXTENSION REPOSITORY & ODAV4" },
+    { percent: 78, text: "OPTIMIZING ZERO-LATENCY RUNTIME ENGINES...", log: "> WMS SCANNER DRIVERS MOUNTED [SUB-50MS SLA]" },
+    { percent: 100, text: "SYSTEM STATUS: NOMINAL // ALL SYSTEMS GO", log: "> TELEMETRY VERIFIED: DISPERSING CURTAIN" }
+  ];
+
+  let preloaderInterval = null;
+
+  function runPreloader() {
+    const preloader = document.getElementById('vaskoi-preloader');
+    const percentEl = document.getElementById('preloader-percent');
+    const barEl = document.getElementById('preloader-bar');
+    const stepEl = document.getElementById('preloader-step-text');
+    const log1 = document.getElementById('preloader-log-1');
+    const log2 = document.getElementById('preloader-log-2');
+    const log3 = document.getElementById('preloader-log-3');
+
+    if (!preloader) return;
+
+    // Reset styles
+    preloader.style.opacity = '1';
+    preloader.style.pointerEvents = 'auto';
+    preloader.style.transform = 'scale(1)';
+    preloader.style.filter = 'blur(0px)';
+    
+    let currentPercent = 0;
+    let stepIndex = 0;
+    if (preloaderInterval) clearInterval(preloaderInterval);
+
+    preloaderInterval = setInterval(() => {
+      // Non-linear pacing for realistic tech feel
+      const increment = Math.floor(Math.random() * 6) + 2;
+      currentPercent += increment;
+
+      if (currentPercent >= 100) {
+        currentPercent = 100;
+        clearInterval(preloaderInterval);
+      }
+
+      // Update percent and bar width
+      if (percentEl) percentEl.textContent = currentPercent < 10 ? '0' + currentPercent : currentPercent;
+      if (barEl) barEl.style.width = currentPercent + '%';
+
+      // Update text milestone steps
+      if (currentPercent > 15 && currentPercent <= 45 && stepIndex === 0) {
+        stepIndex = 1;
+        stepEl.textContent = steps[1].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[1].log;
+      } else if (currentPercent > 45 && currentPercent <= 80 && stepIndex === 1) {
+        stepIndex = 2;
+        stepEl.textContent = steps[2].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[2].log;
+      } else if (currentPercent >= 95 && stepIndex === 2) {
+        stepIndex = 3;
+        stepEl.textContent = steps[3].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[3].log;
+      }
+
+      // Completed sequence
+      if (currentPercent >= 100) {
+        setTimeout(() => {
+          preloader.style.opacity = '0';
+          preloader.style.transform = 'scale(1.04)';
+          preloader.style.filter = 'blur(10px)';
+          preloader.style.pointerEvents = 'none';
+        }, 320);
+      }
+    }, 38);
+  }
+
+  function skipPreloader() {
+    if (preloaderInterval) clearInterval(preloaderInterval);
+    const preloader = document.getElementById('vaskoi-preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transform = 'scale(1.04)';
+      preloader.style.filter = 'blur(10px)';
+      preloader.style.pointerEvents = 'none';
+    }
+  }
+
+  function replayPreloader() {
+    runPreloader();
+  }
+
+  // Start sequence on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    runPreloader();
+  });
+
+  // Spotlight Glow Interaction for Bento Cards
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.bento-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.background = \`radial-gradient(400px circle at \${x}px \${y}px, rgba(255, 42, 27, 0.08), #0E0E12 80%)\`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.background = '';
+      });
+    });
+  });
+
+        `}
+      </Script>
+      
+
+<div className="fixed inset-0 z-[100] bg-[#08080A] flex flex-col items-center justify-center text-white overflow-hidden select-none transition-all duration-700 ease-out" id="vaskoi-preloader">
+
+<div className="absolute inset-0 tech-grid-pattern pointer-events-none opacity-60"></div>
+
+<div className="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,42,27,0.18)_0%,rgba(0,0,0,0)_70%)] glow-pulse pointer-events-none"></div>
+
+<div className="absolute inset-0 terminal-scanline pointer-events-none opacity-40"></div>
+
+<div className="absolute top-6 left-6 right-6 flex items-center justify-between text-text-tertiary font-code-inline text-body-sm z-10 border-b border-border-subtle/50 pb-3">
+<div className="flex items-center gap-3">
+<span className="inline-block w-2 h-2 bg-border-interactive animate-ping"></span>
+<span className="tracking-widest uppercase text-text-secondary">SYSTEM_BOOT // INITIALIZATION_SEQUENCE</span>
+</div>
+<div className="hidden sm:flex items-center gap-4 text-text-tertiary">
+<span>NODE: VASKOI_PROD_HOST</span>
+<span>SECURITY: ENCRYPTED_TLS_1.3</span>
+<span className="text-tertiary">KERNEL: ACTIVE</span>
+</div>
+</div>
+
+<div className="relative z-10 flex flex-col items-center max-w-xl w-full px-6">
+
+<div className="relative w-28 h-28 mb-8 flex items-center justify-center">
+
+<div className="absolute inset-0 border border-border-subtle rounded-none animate-[spin_10s_linear_infinite]"></div>
+<div className="absolute inset-1 border-t-2 border-r-2 border-border-interactive/80 rounded-none animate-[spin_5s_linear_infinite]"></div>
+<div className="absolute inset-3 border-b border-l border-tertiary/70 rounded-none animate-[spin_7s_linear_infinite_reverse]"></div>
+
+<div className="relative flex flex-col items-center justify-center bg-surface-base px-3 py-2 border border-border-subtle shadow-[0_0_25px_rgba(255,42,27,0.25)]">
+<span className="font-headline-sm text-headline-sm font-bold tracking-tight text-white">VASKOI</span>
+<span className="font-code-inline text-[9px] text-border-interactive tracking-widest">{"// ARCH"}</span>
+</div>
+
+<span className="absolute -top-1 -left-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span className="absolute -top-1 -right-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span className="absolute -bottom-1 -left-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span className="absolute -bottom-1 -right-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+</div>
+
+<div className="w-full flex items-baseline justify-between mb-3 px-1">
+<div className="flex items-center gap-2 font-code-inline text-body-sm text-text-secondary">
+<span className="text-border-interactive font-bold animate-pulse">&gt;</span>
+<span className="text-text-primary tracking-wider" id="preloader-step-text">ESTABLISHING SECURE PROTOCOL...</span>
+</div>
+<div className="flex items-baseline">
+<span className="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tighter" id="preloader-percent">00</span>
+<span className="font-code-inline text-sm text-border-interactive font-bold ml-0.5">%</span>
+</div>
+</div>
+
+<div className="w-full h-1.5 bg-surface-elevated border border-border-subtle relative overflow-hidden mb-4 p-[1px]">
+<div className="h-full bg-gradient-to-r from-border-interactive via-infrared-bright to-white transition-all duration-100 ease-out relative" id="preloader-bar" style="width: 0%;">
+
+<div className="absolute top-0 right-0 h-full w-2 bg-white shadow-[0_0_12px_#ff2a1b]"></div>
+</div>
+</div>
+
+<div className="w-full bg-surface-base/80 border border-border-subtle/80 p-3.5 font-code-inline text-[11px] leading-relaxed text-text-tertiary flex flex-col gap-1 backdrop-blur-md">
+<div className="flex items-center justify-between text-text-secondary">
+<span className="text-text-primary flex items-center gap-1.5">
+<span className="w-1.5 h-1.5 bg-border-interactive inline-block"></span>
+          CONSOLE LOG
+        </span>
+<span className="text-tertiary" id="preloader-latency">PING: 14ms</span>
+</div>
+<div className="text-text-secondary truncate" id="preloader-log-1">&gt; INITIALIZING VASKOI ENGINE CLUSTERS...</div>
+<div className="text-text-tertiary truncate" id="preloader-log-2">&gt; CHECKING DEPENDENCY TREES: NEXTJS 14, DYNAMICS 365 BC</div>
+<div className="text-text-tertiary truncate" id="preloader-log-3">&gt; MOUNTING HIGH-THROUGHPUT GRAPHQL &amp; REDIS PIPELINE</div>
+</div>
+</div>
+
+<div className="absolute bottom-6 left-6 right-6 flex items-center justify-between font-code-inline text-body-sm text-text-tertiary z-10 border-t border-border-subtle/50 pt-3">
+<div className="flex items-center gap-2">
+<span className="text-border-interactive">[SYS]</span>
+<span>INITIALIZING INDUSTRIAL RIG // SHUBAM PADHA</span>
+</div>
+<button className="px-2.5 py-1 bg-surface-elevated border border-border-subtle hover:border-border-interactive hover:text-white text-text-secondary transition-colors text-xs font-label-caps uppercase tracking-wider flex items-center gap-1" onclick="skipPreloader()">
+<span>SKIP_INIT</span>
+<span className="material-symbols-outlined text-[14px]">fast_forward</span>
+</button>
+</div>
+</div>
+<header className="fixed top-0 left-0 w-full z-50 bg-surface-deep/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div className="h-16 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div className="flex items-center gap-space-lg"><a className="flex items-center gap-space-sm group" data-path="home" href="#"><span className="font-headline-sm text-headline-sm uppercase tracking-tight text-text-primary group-hover:text-primary transition-colors">VASKOI</span><span className="font-code-inline text-code-inline text-text-tertiary">{"//DEV"}</span></a><div className="hidden sm:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle"><span className="w-2 h-2 bg-tertiary animate-pulse"></span><span className="font-label-caps text-label-caps uppercase text-text-secondary">Available for Q2 Projects</span></div></div><nav className="hidden lg:flex items-center gap-space-xl" data-active-classes="text-primary border-b border-border-interactive"><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="work" href="#">Work</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="services" href="#">Services</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="process" href="#">Process</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="stack" href="#">Stack</a><a className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="contact" href="#">Contact</a></nav><div className="flex items-center gap-space-md"><button className="inline-flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle text-text-secondary hover:text-text-primary hover:border-border-interactive font-code-inline text-body-sm transition-all" id="replay-boot-btn" onclick="replayPreloader()" title="Replay System Boot Animation"><span className="w-1.5 h-1.5 bg-border-interactive animate-pulse"></span><span className="hidden sm:inline">[ REPLAY LOADER ]</span><span className="material-symbols-outlined text-[14px]">replay</span></button><a className="hidden md:inline-flex items-center justify-center px-space-md py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-infrared-bright transition-all" data-path="contact" href="#"><span className="mr-space-xs">Start a Project</span><span className="material-symbols-outlined text-[14px]">arrow_forward</span></a><div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main className="w-full pt-16 bg-surface-deep"><div className="flex flex-col w-full selection:bg-border-interactive selection:text-white overflow-hidden">
 
 <section className="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden px-gutter-mobile lg:px-gutter-desktop pt-space-xl pb-space-2xl bg-surface-deep">
-
 
 
 <div className="absolute inset-0 bg-gradient-to-b from-surface-deep/80 via-transparent to-surface-deep pointer-events-none"></div>
@@ -868,23 +1073,7 @@ export default function Home() {
 </div>
 </section>
 </div>
-<script dangerouslySetInnerHTML={{ __html: `
-  // Spotlight Glow Interaction for Bento Cards
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.bento-card');
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.background = \`radial-gradient(400px circle at \${x}px \${y}px, rgba(255, 42, 27, 0.08), #0E0E12 80%)\`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.background = '';
-      });
-    });
-  });
-` }} /></main><footer className="w-full bg-surface-base border-t border-border-subtle py-space-3xl mt-space-4xl"><div className="max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div className="grid grid-cols-1 md:grid-cols-12 gap-space-2xl pb-space-2xl border-b border-border-subtle"><div className="md:col-span-6 flex flex-col gap-space-md"><div className="flex items-center gap-space-sm"><span className="font-headline-md text-headline-md text-text-primary uppercase">VASKOI</span><span className="font-code-inline text-code-inline text-text-secondary">[STUDIO]</span></div><p className="font-body-md text-body-md text-text-secondary max-w-md">High-performance digital engineering studio directed by Shubam Padha. Architecting resilient full-stack systems, modern ERP foundations, and enterprise mobile solutions.</p></div><div className="md:col-span-3 flex flex-col gap-space-sm"><span className="font-label-caps text-label-caps uppercase text-text-tertiary tracking-wider">Operational Coordinates</span><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="mailto:contact@vaskoi.engineering"><span className="material-symbols-outlined text-[16px] text-text-secondary">mail</span><span>contact@vaskoi.engineering</span></a><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="tel:+10000000000"><span className="material-symbols-outlined text-[16px] text-text-secondary">call</span><span>+1 (Direct Terminal)</span></a></div><div className="md:col-span-3 flex flex-col gap-space-sm"><span className="font-label-caps text-label-caps uppercase text-text-tertiary tracking-wider">Codebases &amp; Registry</span><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="#"><span className="material-symbols-outlined text-[16px] text-text-secondary">terminal</span><span>GitHub Protocol</span></a><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="#"><span className="material-symbols-outlined text-[16px] text-text-secondary">hub</span><span>Open Source Registry</span></a></div></div><div className="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><p className="font-body-sm text-body-sm text-text-secondary">© 2024–2026 Shubam Padha. Built with lots of coffee.</p><div className="flex items-center gap-space-sm"><span className="w-1.5 h-1.5 bg-tertiary"></span><span className="font-code-inline text-code-inline text-text-tertiary">SYS_STATUS: ALL SYSTEMS NOMINAL</span></div></div></div></footer>
+</main><footer className="w-full bg-surface-base border-t border-border-subtle py-space-3xl mt-space-4xl"><div className="max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div className="grid grid-cols-1 md:grid-cols-12 gap-space-2xl pb-space-2xl border-b border-border-subtle"><div className="md:col-span-6 flex flex-col gap-space-md"><div className="flex items-center gap-space-sm"><span className="font-headline-md text-headline-md text-text-primary uppercase">VASKOI</span><span className="font-code-inline text-code-inline text-text-secondary">[STUDIO]</span></div><p className="font-body-md text-body-md text-text-secondary max-w-md">High-performance digital engineering studio directed by Shubam Padha. Architecting resilient full-stack systems, modern ERP foundations, and enterprise mobile solutions.</p></div><div className="md:col-span-3 flex flex-col gap-space-sm"><span className="font-label-caps text-label-caps uppercase text-text-tertiary tracking-wider">Operational Coordinates</span><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="mailto:contact@vaskoi.engineering"><span className="material-symbols-outlined text-[16px] text-text-secondary">mail</span><span>contact@vaskoi.engineering</span></a><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="tel:+10000000000"><span className="material-symbols-outlined text-[16px] text-text-secondary">call</span><span>+1 (Direct Terminal)</span></a></div><div className="md:col-span-3 flex flex-col gap-space-sm"><span className="font-label-caps text-label-caps uppercase text-text-tertiary tracking-wider">Codebases &amp; Registry</span><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="#"><span className="material-symbols-outlined text-[16px] text-text-secondary">terminal</span><span>GitHub Protocol</span></a><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="#"><span className="material-symbols-outlined text-[16px] text-text-secondary">hub</span><span>Open Source Registry</span></a></div></div><div className="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><p className="font-body-sm text-body-sm text-text-secondary">© 2024–2026 Shubam Padha. Built with lots of coffee.</p><div className="flex items-center gap-space-sm"><span className="w-1.5 h-1.5 bg-tertiary"></span><span className="font-code-inline text-code-inline text-text-tertiary">SYS_STATUS: ALL SYSTEMS NOMINAL</span></div></div></div></footer>
     </>
   );
 }

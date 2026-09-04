@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+/* Preloader Scanline & Grid Effect */
+.terminal-scanline {
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 6px 100%;
+}
+.tech-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 42, 27, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 42, 27, 0.04) 1px, transparent 1px);
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; transform: scale(0.98); }
+  50% { opacity: 0.65; transform: scale(1.03); }
+}
+.glow-pulse {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-deep":"#08080A","surface-container":"#1f1f23","inverse-primary":"#c00000","surface-tint":"#ffb4a8","primary-fixed-dim":"#ffb4a8","infrared-glow":"rgba(255, 42, 27, 0.15)","tertiary-container":"#00a0aa","on-secondary-fixed-variant":"#46464e","tertiary":"#00dbe9","background":"#131317","tertiary-fixed":"#7df4ff","error-container":"#93000a","primary-container":"#ff5541","on-background":"#e4e1e7","on-primary-fixed":"#410000","surface-variant":"#353439","border-subtle":"#23232A","secondary":"#c7c5cf","on-error-container":"#ffdad6","surface":"#131317","on-tertiary-fixed-variant":"#004f54","error":"#ffb4ab","on-secondary":"#303037","border-interactive":"#FF2A1B","surface-bright":"#39393d","secondary-fixed-dim":"#c7c5cf","on-tertiary-fixed":"#002022","on-surface":"#e4e1e7","primary":"#ffb4a8","inverse-surface":"#e4e1e7","surface-container-low":"#1b1b1f","outline":"#af8781","text-tertiary":"#525262","surface-container-highest":"#353439","infrared-bright":"#FF453A","text-secondary":"#8E8E9F","inverse-on-surface":"#303034","surface-container-high":"#2a292e","on-primary":"#690000","tertiary-fixed-dim":"#00dbe9","cyan-accent":"#00F0FF","on-primary-fixed-variant":"#930000","on-surface-variant":"#e9bcb5","on-tertiary":"#00363a","secondary-fixed":"#e4e1eb","border-strong":"#343440","text-primary":"#F4F4F6","outline-variant":"#5e3f3a","surface-elevated":"#14141A","on-tertiary-container":"#002f33","on-primary-container":"#5c0000","secondary-container":"#46464e","on-secondary-container":"#b6b4bd","surface-container-lowest":"#0e0e12","surface-base":"#0E0E12","surface-overlay":"#1C1C24","on-secondary-fixed":"#1b1b22","primary-fixed":"#ffdad4","surface-dim":"#131317","on-error":"#690005"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-md":"1rem","space-3xl":"4.5rem","space-5xl":"8rem","space-lg":"1.5rem","space-2xs":"0.125rem","space-sm":"0.5rem","gutter-mobile":"1rem","container-max":"1360px","gutter-desktop":"1.5rem","space-4xl":"6rem","space-xl":"2rem","space-2xl":"3rem"},"fontFamily":{"headline-lg":["Space Grotesk"],"headline-md":["Space Grotesk"],"body-md":["JetBrains Mono"],"counter-num":["Space Grotesk"],"display":["Space Grotesk"],"body-sm":["JetBrains Mono"],"display-mobile":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"body-lg":["JetBrains Mono"],"code-inline":["JetBrains Mono"],"label-caps":["JetBrains Mono"],"headline-sm":["Space Grotesk"]},"fontSize":{"headline-lg":["44px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-md":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"counter-num":["48px",{"lineHeight":"48px","letterSpacing":"-0.04em","fontWeight":"700"}],"display":["64px",{"lineHeight":"68px","letterSpacing":"-0.04em","fontWeight":"700"}],"body-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"display-mobile":["38px",{"lineHeight":"42px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg-mobile":["30px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"400"}],"code-inline":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"500"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface-deep font-body-md text-body-md text-on-surface antialiased">
+<!-- ==================== HIGH-TECH CINEMATIC PRELOADER ==================== -->
+<div class="fixed inset-0 z-[100] bg-[#08080A] flex flex-col items-center justify-center text-white overflow-hidden select-none transition-all duration-700 ease-out" id="vaskoi-preloader">
+<!-- Subtle Technical Grid Mesh -->
+<div class="absolute inset-0 tech-grid-pattern pointer-events-none opacity-60"></div>
+<!-- Glowing Crimson Ambient Bloom -->
+<div class="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,42,27,0.18)_0%,rgba(0,0,0,0)_70%)] glow-pulse pointer-events-none"></div>
+<!-- Scanline Overlay -->
+<div class="absolute inset-0 terminal-scanline pointer-events-none opacity-40"></div>
+<!-- Top Decorative Telemetry Bar inside Preloader -->
+<div class="absolute top-6 left-6 right-6 flex items-center justify-between text-text-tertiary font-code-inline text-body-sm z-10 border-b border-border-subtle/50 pb-3">
+<div class="flex items-center gap-3">
+<span class="inline-block w-2 h-2 bg-border-interactive animate-ping"></span>
+<span class="tracking-widest uppercase text-text-secondary">SYSTEM_BOOT // INITIALIZATION_SEQUENCE</span>
+</div>
+<div class="hidden sm:flex items-center gap-4 text-text-tertiary">
+<span>NODE: VASKOI_PROD_HOST</span>
+<span>SECURITY: ENCRYPTED_TLS_1.3</span>
+<span class="text-tertiary">KERNEL: ACTIVE</span>
+</div>
+</div>
+<!-- Centerpiece Loading Unit -->
+<div class="relative z-10 flex flex-col items-center max-w-xl w-full px-6">
+<!-- Geometric Aperture & Monogram Brand Mark -->
+<div class="relative w-28 h-28 mb-8 flex items-center justify-center">
+<!-- Rotating outer bracket frame -->
+<div class="absolute inset-0 border border-border-subtle rounded-none animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute inset-1 border-t-2 border-r-2 border-border-interactive/80 rounded-none animate-[spin_5s_linear_infinite]"></div>
+<div class="absolute inset-3 border-b border-l border-tertiary/70 rounded-none animate-[spin_7s_linear_infinite_reverse]"></div>
+<!-- Center Monogram -->
+<div class="relative flex flex-col items-center justify-center bg-surface-base px-3 py-2 border border-border-subtle shadow-[0_0_25px_rgba(255,42,27,0.25)]">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-white">VASKOI</span>
+<span class="font-code-inline text-[9px] text-border-interactive tracking-widest">// ARCH</span>
+</div>
+<!-- Tech corner crosshairs -->
+<span class="absolute -top-1 -left-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span class="absolute -top-1 -right-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span class="absolute -bottom-1 -left-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span class="absolute -bottom-1 -right-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+</div>
+<!-- Progress Counter Display -->
+<div class="w-full flex items-baseline justify-between mb-3 px-1">
+<div class="flex items-center gap-2 font-code-inline text-body-sm text-text-secondary">
+<span class="text-border-interactive font-bold animate-pulse">&gt;</span>
+<span class="text-text-primary tracking-wider" id="preloader-step-text">ESTABLISHING SECURE PROTOCOL...</span>
+</div>
+<div class="flex items-baseline">
+<span class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tighter" id="preloader-percent">00</span>
+<span class="font-code-inline text-sm text-border-interactive font-bold ml-0.5">%</span>
+</div>
+</div>
+<!-- Precision Progress Bar -->
+<div class="w-full h-1.5 bg-surface-elevated border border-border-subtle relative overflow-hidden mb-4 p-[1px]">
+<div class="h-full bg-gradient-to-r from-border-interactive via-infrared-bright to-white transition-all duration-100 ease-out relative" id="preloader-bar" style="width: 0%;">
+<!-- High intensity tip glow -->
+<div class="absolute top-0 right-0 h-full w-2 bg-white shadow-[0_0_12px_#ff2a1b]"></div>
+</div>
+</div>
+<!-- Diagnostic Terminal Telemetry Lines -->
+<div class="w-full bg-surface-base/80 border border-border-subtle/80 p-3.5 font-code-inline text-[11px] leading-relaxed text-text-tertiary flex flex-col gap-1 backdrop-blur-md">
+<div class="flex items-center justify-between text-text-secondary">
+<span class="text-text-primary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 bg-border-interactive inline-block"></span>
+          CONSOLE LOG
+        </span>
+<span class="text-tertiary" id="preloader-latency">PING: 14ms</span>
+</div>
+<div class="text-text-secondary truncate" id="preloader-log-1">&gt; INITIALIZING VASKOI ENGINE CLUSTERS...</div>
+<div class="text-text-tertiary truncate" id="preloader-log-2">&gt; CHECKING DEPENDENCY TREES: NEXTJS 14, DYNAMICS 365 BC</div>
+<div class="text-text-tertiary truncate" id="preloader-log-3">&gt; MOUNTING HIGH-THROUGHPUT GRAPHQL &amp; REDIS PIPELINE</div>
+</div>
+</div>
+<!-- Bottom Coordinates Footer in Loader -->
+<div class="absolute bottom-6 left-6 right-6 flex items-center justify-between font-code-inline text-body-sm text-text-tertiary z-10 border-t border-border-subtle/50 pt-3">
+<div class="flex items-center gap-2">
+<span class="text-border-interactive">[SYS]</span>
+<span>INITIALIZING INDUSTRIAL RIG // SHUBAM PADHA</span>
+</div>
+<button class="px-2.5 py-1 bg-surface-elevated border border-border-subtle hover:border-border-interactive hover:text-white text-text-secondary transition-colors text-xs font-label-caps uppercase tracking-wider flex items-center gap-1" onclick="skipPreloader()">
+<span>SKIP_INIT</span>
+<span class="material-symbols-outlined text-[14px]">fast_forward</span>
+</button>
+</div>
+</div>
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-deep/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-text-primary group-hover:text-primary transition-colors">VASKOI</span><span class="font-code-inline text-code-inline text-text-tertiary">//DEV</span></a><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle"><span class="w-2 h-2 bg-tertiary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-text-secondary">Available for Q2 Projects</span></div></div><nav class="hidden lg:flex items-center gap-space-xl" data-active-classes="text-primary border-b border-border-interactive"><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="work" href="#">Work</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="services" href="#">Services</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="process" href="#">Process</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="stack" href="#">Stack</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-base border border-border-subtle text-text-secondary hover:text-text-primary hover:border-border-interactive font-code-inline text-body-sm transition-all" id="replay-boot-btn" onclick="replayPreloader()" title="Replay System Boot Animation"><span class="w-1.5 h-1.5 bg-border-interactive animate-pulse"></span><span class="hidden sm:inline">[ REPLAY LOADER ]</span><span class="material-symbols-outlined text-[14px]">replay</span></button><a class="hidden md:inline-flex items-center justify-center px-space-md py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-infrared-bright transition-all" data-path="contact" href="#"><span class="mr-space-xs">Start a Project</span><span class="material-symbols-outlined text-[14px]">arrow_forward</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface-deep"><div class="flex flex-col w-full selection:bg-border-interactive selection:text-white overflow-hidden">
+<!-- ==================== 1. HERO SECTION ==================== -->
+<section class="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden px-gutter-mobile lg:px-gutter-desktop pt-space-xl pb-space-2xl bg-surface-deep">
+<!-- WebGL Ambient Shader Background -->
+<!-- Heavy Obsidian Vignette Overlays -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface-deep/80 via-transparent to-surface-deep pointer-events-none"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(8,8,10,0.92)_100%)] pointer-events-none"></div>
+<!-- Top Telemetry Strip -->
+<div class="relative z-10 max-w-[1360px] w-full mx-auto flex flex-wrap items-center justify-between gap-space-sm pt-space-sm">
+<div class="inline-flex items-center gap-space-sm px-space-md py-space-xs bg-surface-base/90 border border-border-subtle backdrop-blur-md">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-border-interactive opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-border-interactive"></span>
+</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-text-primary">AVAILABLE FOR NEW CLIENT PROJECTS</span>
+<span class="text-text-tertiary font-code-inline text-body-sm hidden sm:inline">| Q2-Q3 PIPELINE</span>
+</div>
+<div class="hidden md:flex items-center gap-space-md font-code-inline text-body-sm text-text-secondary">
+<span>LOC: 32.7266° N, 74.8570° E</span>
+<span class="text-border-interactive animate-pulse">●</span>
+<span>LATENCY: 18ms</span>
+</div>
+</div>
+<!-- Main Headline Centerpiece -->
+<div class="relative z-10 max-w-[1360px] w-full mx-auto my-auto py-space-3xl flex flex-col items-start justify-center">
+<div class="flex items-center gap-space-xs mb-space-md text-text-secondary font-code-inline text-body-sm tracking-widest">
+<span class="text-border-interactive">[</span><span>00_SYS_INIT // VASKOI.IN</span><span class="text-border-interactive">]</span>
+</div>
+<h1 class="font-display text-display text-text-primary max-w-5xl tracking-tight leading-[1.05] mb-space-lg">
+        You have the idea. <br class="hidden sm:inline"/>
+<span class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-border-interactive via-infrared-bright to-white animate-pulse">
+          I build the system
+        </span> 
+        behind it.
+      </h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mb-space-2xl leading-relaxed">
+        Websites. Apps. ERP. Integrations. Architecting robust enterprise solutions, low-latency mobile platforms, and high-conversion digital ecosystems for visionary teams.
+      </p>
+<!-- Dual Call to Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
+<a class="group relative inline-flex items-center justify-center px-space-xl py-space-md bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider overflow-hidden transition-all duration-300 hover:bg-infrared-bright hover:-translate-y-1 shadow-[0_0_24px_rgba(255,42,27,0.35)]" href="#contact-terminal">
+<!-- Sheen effect -->
+<span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></span>
+<span class="relative z-10 mr-space-sm">Start a Project</span>
+<span class="relative z-10 material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-1">terminal</span>
+</a>
+<a class="group relative inline-flex items-center justify-center px-space-xl py-space-md bg-surface-base border border-border-subtle text-text-primary font-label-caps text-label-caps uppercase tracking-wider transition-all duration-300 hover:border-border-interactive hover:text-white hover:-translate-y-1" href="#case-studies">
+<span class="mr-space-sm">View Case Studies</span>
+<span class="material-symbols-outlined text-[16px] text-text-secondary group-hover:text-border-interactive transition-colors">arrow_outward</span>
+</a>
+<div class="hidden xl:flex items-center gap-space-xs font-code-inline text-body-sm text-text-tertiary ml-space-md">
+<span class="w-1.5 h-1.5 bg-tertiary"></span>
+<span>DISCOVERY → ARCHITECTURE → DEPLOYMENT</span>
+</div>
+</div>
+</div>
+<!-- CAD Telemetry Metrics Footer Bar -->
+<div class="relative z-10 max-w-[1360px] w-full mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-subtle border border-border-subtle">
+<div class="bg-surface-base/95 p-space-lg flex flex-col justify-between transition-colors duration-200 hover:bg-surface-elevated group">
+<span class="font-code-inline text-body-sm text-text-tertiary group-hover:text-border-interactive transition-colors">// PROD_RELEASE</span>
+<div class="my-space-xs">
+<span class="font-counter-num text-counter-num text-text-primary group-hover:text-white">20</span>
+<span class="text-border-interactive font-counter-num text-counter-num">+</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary uppercase tracking-wider">Enterprise &amp; Web Systems</p>
+</div>
+<div class="bg-surface-base/95 p-space-lg flex flex-col justify-between transition-colors duration-200 hover:bg-surface-elevated group">
+<span class="font-code-inline text-body-sm text-text-tertiary group-hover:text-border-interactive transition-colors">// ARCH_TENURE</span>
+<div class="my-space-xs">
+<span class="font-counter-num text-counter-num text-text-primary group-hover:text-white">03</span>
+<span class="text-tertiary font-counter-num text-counter-num">+</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary uppercase tracking-wider">Years Applied Mastery</p>
+</div>
+<div class="bg-surface-base/95 p-space-lg flex flex-col justify-between transition-colors duration-200 hover:bg-surface-elevated group">
+<span class="font-code-inline text-body-sm text-text-tertiary group-hover:text-border-interactive transition-colors">// EXEC_INTEGRITY</span>
+<div class="my-space-xs">
+<span class="font-counter-num text-counter-num text-text-primary group-hover:text-white">100</span>
+<span class="text-border-interactive font-counter-num text-counter-num">%</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary uppercase tracking-wider">Client Satisfaction SLA</p>
+</div>
+<div class="bg-surface-base/95 p-space-lg flex flex-col justify-between transition-colors duration-200 hover:bg-surface-elevated group">
+<span class="font-code-inline text-body-sm text-text-tertiary group-hover:text-tertiary transition-colors">// SYSTEM_UPTIME</span>
+<div class="my-space-xs">
+<span class="font-counter-num text-counter-num text-text-primary group-hover:text-white">99.9</span>
+<span class="text-tertiary font-counter-num text-counter-num">%</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary uppercase tracking-wider">High Availability Standard</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 2. CASE STUDIES & PORTFOLIO REGISTRY ==================== -->
+<section class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-5xl" id="case-studies">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
+<span>// 01_PORTFOLIO_REGISTRY</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+          From websites to enterprise systems.
+        </h2>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-md">
+        Proven delivery across complex e-commerce, cloud operation dashboards, warehouse scanners, and core ERP customization.
+      </p>
+</div>
+<!-- Bento Grid Case Studies with Cursor Spotlight Glow Script -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="spotlight-grid">
+<!-- CASE 01: E-Commerce Experience (Col 7) -->
+<div class="bento-card lg:col-span-7 bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg border-b border-border-subtle flex items-center justify-between bg-surface-deep/40">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-inline text-body-sm text-text-tertiary">#CASE_01</span>
+<span class="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Retail Tech</span>
+</div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
+<span>EXPLORE</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
+</div>
+</div>
+<div class="p-space-xl">
+<h3 class="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
+            High-Conversion E-Commerce Architecture for Modern Retail
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            Architected a headless multi-currency catalog with sub-100ms server-side rendering, integrated real-time inventory caching, and friction-free payment settlement.
+          </p>
+<div class="flex flex-wrap gap-space-xs mb-space-xl">
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary group-hover:border-border-subtle">Next.js 14</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">React Server Components</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">Node.js</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">Stripe / REST</span>
+</div>
+</div>
+<!-- Metric strip inside card -->
+<div class="grid grid-cols-3 border-t border-border-subtle bg-surface-deep/70">
+<div class="p-space-md border-r border-border-subtle">
+<div class="font-headline-sm text-headline-sm text-border-interactive font-bold">+184%</div>
+<div class="font-code-inline text-body-sm text-text-tertiary">Checkout Speed</div>
+</div>
+<div class="p-space-md border-r border-border-subtle">
+<div class="font-headline-sm text-headline-sm text-text-primary font-bold">99.98%</div>
+<div class="font-code-inline text-body-sm text-text-tertiary">Payment SLA</div>
+</div>
+<div class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-tertiary font-bold">42k+</div>
+<div class="font-code-inline text-body-sm text-text-tertiary">Active Monthly SKU</div>
+</div>
+</div>
+</div>
+<!-- CASE 02: Business Operations Platform (Col 5) -->
+<div class="bento-card lg:col-span-5 bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg border-b border-border-subtle flex items-center justify-between bg-surface-deep/40">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-inline text-body-sm text-text-tertiary">#CASE_02</span>
+<span class="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Internal Tools</span>
+</div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
+<span>EXPLORE</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
+</div>
+</div>
+<div class="p-space-xl">
+<h3 class="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
+            Operations &amp; Telemetry Command Platform
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            Unified mission-critical resource allocation, contract lifecycle, and client billings into a single low-latency cockpit.
+          </p>
+<div class="flex flex-wrap gap-space-xs mb-space-lg">
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">React</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">TypeScript</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">PostgreSQL</span>
+</div>
+</div>
+<div class="p-space-lg border-t border-border-subtle bg-surface-deep/70 flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-tertiary">AUDIT STATUS: FULLY CERTIFIED</span>
+<span class="font-code-inline text-body-sm text-tertiary">ZERO-DOWNTIME SYNC</span>
+</div>
+</div>
+<!-- CASE 03: Mobile Workforce Application (Col 5) -->
+<div class="bento-card lg:col-span-5 bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg border-b border-border-subtle flex items-center justify-between bg-surface-deep/40">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-inline text-body-sm text-text-tertiary">#CASE_03</span>
+<span class="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Mobile Systems</span>
+</div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
+<span>EXPLORE</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
+</div>
+</div>
+<div class="p-space-xl">
+<h3 class="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
+            Field Workforce &amp; Offline Sync Engine
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            Engineered an offline-first mobile application capable of bidirectional queuing and conflict resolution under zero-connectivity field conditions.
+          </p>
+<div class="flex flex-wrap gap-space-xs mb-space-lg">
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">React Native</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">Android OS</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">SQLite</span>
+</div>
+</div>
+<div class="p-space-lg border-t border-border-subtle bg-surface-deep/70 flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-tertiary">OFFLINE BUFFER: 10,000 TRANSACTIONS</span>
+<span class="font-code-inline text-body-sm text-border-interactive">AUTOMATIC HEALING</span>
+</div>
+</div>
+<!-- CASE 04: Business Central Customization (Col 7) -->
+<div class="bento-card lg:col-span-7 bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg border-b border-border-subtle flex items-center justify-between bg-surface-deep/40">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-inline text-body-sm text-text-tertiary">#CASE_04</span>
+<span class="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Enterprise ERP</span>
+</div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
+<span>EXPLORE</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
+</div>
+</div>
+<div class="p-space-xl">
+<h3 class="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
+            Microsoft Dynamics 365 BC Custom Engineering
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            Architected custom AL extensions, automated multi-stage invoice validation pipelines, and integrated low-code webhooks bridging modern SaaS with corporate ERP backbones.
+          </p>
+<div class="flex flex-wrap gap-space-xs mb-space-xl">
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">Dynamics 365 BC</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">AL Language</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">Power Automate</span>
+<span class="font-code-inline text-body-sm px-space-sm py-space-2xs bg-surface-elevated border border-border-subtle text-text-secondary">OData v4</span>
+</div>
+</div>
+<div class="grid grid-cols-2 border-t border-border-subtle bg-surface-deep/70">
+<div class="p-space-md border-r border-border-subtle">
+<div class="font-headline-sm text-headline-sm text-text-primary font-bold">120 hrs/mo</div>
+<div class="font-code-inline text-body-sm text-text-tertiary">Saved via Automation</div>
+</div>
+<div class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-border-interactive font-bold">0.00%</div>
+<div class="font-code-inline text-body-sm text-text-tertiary">Reconciliation Discrepancy</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 3. "UI CRAFT IN ACTION" SHOWCASE ==================== -->
+<section class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
+<span>// 02_VISUAL_INTERFACE_ENGINEERING</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+          UI Craft in Action.
+        </h2>
+</div>
+<span class="font-code-inline text-body-sm text-text-secondary">MODULAR INDUSTRIAL RIGOR // 6 ACTIVE DEPLOYMENTS</span>
+</div>
+<!-- 6 Modular Spotlight Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- ITEM 1: ScanGo WMS Featured with actual provided image -->
+<div class="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
+<div class="relative h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="ScanGo WMS scanner system running" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XMkRmAecuOTznhX8AkA2HvYfq2OTb0JzpcXxCQvDU_e4n1LC-n4V5xXudCI1aFqUrqinFsmkUIZ3Ji_oEFnz3NypGHYyOI2GkcEeHs23K99yMl9ytOJICA_hXFndo3CsHAMxUvMsUiVUl22Q9hq1o3pLNpaKzdZieLpRvWU6O3-auFl3TA-O-P75XzeQlBaMiXoUjhwKZUCrw2a5TspCw-jZg4tpp03-HcUH4B4W7ys75wql8VCofUUw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-border-interactive text-white font-label-caps text-label-caps uppercase tracking-wider">
+            FEATURED RIG
+          </span>
+<span class="absolute bottom-space-sm right-space-sm font-code-inline text-body-sm text-tertiary px-space-xs py-space-2xs bg-surface-deep/90 border border-border-subtle">
+            v2.4_STABLE
+          </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-code-inline text-body-sm text-border-interactive">SYS: SCAN-GO // WMS</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">ScanGo WMS Engine</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+              Offline-first mobile warehouse execution system directly connected to Microsoft Dynamics 365 Business Central. Barcode decoders running at sub-50ms latency.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm border-t border-border-subtle font-code-inline text-body-sm text-text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>RUGGED HARDWARE READY</span>
+</div>
+</div>
+</div>
+<!-- ITEM 2: Business Central Dashboard Custom UI -->
+<div class="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
+<div class="relative h-60 w-full overflow-hidden bg-surface-deep flex items-center justify-center p-space-md">
+<!-- Synthetic High-Tech Telemetry Wireframe Visual -->
+<div class="w-full h-full border border-border-subtle bg-surface-deep/90 p-space-md flex flex-col justify-between relative group-hover:border-text-secondary transition-colors">
+<div class="flex items-center justify-between border-b border-border-subtle pb-space-xs font-code-inline text-body-sm text-text-secondary">
+<span>BC_ANALYTICS // REALTIME</span>
+<span class="text-tertiary">OK</span>
+</div>
+<div class="flex items-end justify-between gap-space-xs h-24 pt-space-sm">
+<div class="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[40%]"></div>
+<div class="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[65%]"></div>
+<div class="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[85%]"></div>
+<div class="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[50%]"></div>
+<div class="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[95%]"></div>
+<div class="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[75%]"></div>
+</div>
+<div class="font-code-inline text-body-sm text-text-tertiary flex justify-between">
+<span>LEDGER SYNC: 100%</span>
+<span>12ms DURATION</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-code-inline text-body-sm text-border-interactive">SYS: BC_CUSTOM_DASH</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">Dynamics 365 BC Custom Cockpit</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+              Customized role center layout with streamlined ledger summaries, real-time KPI aggregates, and customized inventory alert trees.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm border-t border-border-subtle font-code-inline text-body-sm text-text-tertiary">
+<span class="w-2 h-2 rounded-full bg-border-interactive animate-pulse"></span>
+<span>ENTERPRISE ERP COCKPIT</span>
+</div>
+</div>
+</div>
+<!-- ITEM 3: E-Signature Workflow Integration -->
+<div class="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
+<div class="relative h-60 w-full overflow-hidden bg-surface-deep flex items-center justify-center p-space-md">
+<div class="w-full h-full border border-border-subtle bg-surface-deep/90 p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between font-code-inline text-body-sm text-text-secondary">
+<span>CRYPTO_VERIFY // HASH</span>
+<span class="text-border-interactive">LOCKED</span>
+</div>
+<div class="p-space-sm bg-surface-elevated border border-border-subtle">
+<div class="font-code-inline text-body-sm text-text-primary">DOC_ID: #SIG-8921-X9</div>
+<div class="font-code-inline text-body-sm text-text-tertiary">SHA256: 8f4e2...a90b1</div>
+<div class="w-full bg-border-subtle h-1 mt-space-xs overflow-hidden">
+<div class="bg-border-interactive h-full w-4/5 animate-pulse"></div>
+</div>
+</div>
+<span class="font-code-inline text-body-sm text-text-secondary">STATUS: AUTOMATED POWER AUTOMATE TRIGGER</span>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-code-inline text-body-sm text-border-interactive">SYS: ESIGN_PIPELINE</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">E-Signature Workflow Integration</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+              Automated document signing engine embedding legal-grade electronic signatures into purchase requisition and vendor approval lifecycles.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm border-t border-border-subtle font-code-inline text-body-sm text-text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>SECURE REST WEBHOOKS</span>
+</div>
+</div>
+</div>
+<!-- ITEM 4: AfterLight Creative Studio -->
+<div class="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
+<div class="relative h-60 w-full overflow-hidden bg-surface-deep">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dark aesthetic cinematic portfolio website interface preview for a film and creative studio named AfterLight with bold typography high contrast lighting deep graphite and incandescent red highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDNnQRrWs3KVLHz-f3BI09MPILA2N-oMm8mSNgtM2e__okCgb9VA3HNkL6Pa7ldhytge97U1fSvRRSg6ndu7R1iLM4ZfLdUIMmEb-VutCdlsW3Tyyr0JuVe5UOrWGHzMQk0VHX9i3Omk4TW-O3Ese2CuDqpstGULKbiJiLo4sZIinfzAExNQSnqSIHLpThGOA3SZBXj1hVXk_DezfmhNgZD8tfRmfWTzh7GUOHWJwF6DDwA8ndz8dr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
+            DIGITAL_SHOWCASE
+          </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-code-inline text-body-sm text-border-interactive">SYS: AFTERLIGHT_STUDIO</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">AfterLight Creative Studio</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+              Experimental media collective web experience with smooth page transitions, video streaming cache headers, and brutalist typographic hierarchy.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm border-t border-border-subtle font-code-inline text-body-sm text-text-tertiary">
+<span class="w-2 h-2 rounded-full bg-text-secondary"></span>
+<span>60FPS SMOOTH SCROLLING</span>
+</div>
+</div>
+</div>
+<!-- ITEM 5: DAP Canada Renovation Portal -->
+<div class="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
+<div class="relative h-60 w-full overflow-hidden bg-surface-deep">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern technical customer portal interface for renovation company DAP Canada with project estimation calculators interactive blueprints sleek dark theme and crisp numeric data displays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeAJ1lo_p6d2MTEq7wvRyqSFUdZfyspVpyuZsc28Fjyz6AADylWHdHuQFmlwGhJL2IlF9SGn4FUSk-OJwWIuKqFxU_86C95HK3ZZG8MrQYFzYm0MNlhnPyxCfzYM5Lt8MqMfyqEl_kOjaqD8Oz7iUuGUX2Lpn8MU127cmw16nBtLSJ-k60HNZxPmfsy0sg_mubi-SmP0DyN-Nn4oWJ8Dv_ly-YXbEvQTC7D-IOAxZVZxPcu3x8yrKP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
+            PORTAL_ENGINE
+          </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-code-inline text-body-sm text-border-interactive">SYS: DAP_CANADA</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">DAP Canada Client Portal</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+              Construction and architectural renovation client terminal featuring quote generators, live milestone status tracking, and contract file management.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm border-t border-border-subtle font-code-inline text-body-sm text-text-tertiary">
+<span class="w-2 h-2 rounded-full bg-border-interactive"></span>
+<span>ENTERPRISE ESTIMATOR ENGINE</span>
+</div>
+</div>
+</div>
+<!-- ITEM 6: One Stop Computer Shop -->
+<div class="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
+<div class="relative h-60 w-full overflow-hidden bg-surface-deep">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Computer hardware ecommerce web store interface showcasing custom PC builder component compatibility checks obsidian dark UI and neon red spec badges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6tFj_7nEOiUtivLv_tbH7jtpMjbsHHMG2c8rRFFy0EWBCataH2G1IlYRpeZimb6Tx-Txuc4MP82z5ASA_UewGZP5SjEiDQdzurWa-V5Zvg4owY3nKZnKyiHN1AUCfQ7R_CF0QzkP4CWJ86ZpgnzimvzDrVTXUoVs6S0OwKtU5YMCQr2NoQwQv6047JAiIqhON_PfXAOK0kj_EQW04p6pAxZi5xXYnyrEVKfrSPKiHWG37DHfTK-uQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
+            HARDWARE_STORE
+          </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-code-inline text-body-sm text-border-interactive">SYS: ONE_STOP_COMP</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">One Stop Computer Shop</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+              Computer hardware configurator &amp; e-commerce engine with real-time socket-based component compatibility checks and high-volume checkout flow.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm border-t border-border-subtle font-code-inline text-body-sm text-text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>DYNAMIC HARDWARE BUILDER</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 4. CAPABILITIES & ARCHITECTURE ==================== -->
+<section class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
+<span>// 03_CAPABILITY_MATRIX</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+          Engineered for scale.
+        </h2>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-md">
+        Structured engineering services delivering zero-compromise speed, security, and enterprise longevity.
+      </p>
+</div>
+<!-- 4-Column Interlocking Architecture Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border-subtle border border-border-subtle">
+<!-- Col 1 -->
+<div class="bg-surface-base p-space-xl flex flex-col justify-between relative group hover:bg-surface-elevated transition-colors duration-200">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-border-interactive transition-all duration-300"></div>
+<div>
+<span class="font-headline-lg text-headline-lg text-text-tertiary group-hover:text-border-interactive transition-colors">01</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-space-md mb-space-sm">Web Systems</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            High-conversion, ultra-fast modern web platforms built on Next.js, Nuxt, or headless micro-frontends with perfect lighthouse benchmarks.
+          </p>
+</div>
+<ul class="space-y-space-xs font-code-inline text-body-sm text-text-secondary border-t border-border-subtle pt-space-md">
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Server-Driven UI</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Headless E-Commerce</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Automated Edge SEO</li>
+</ul>
+</div>
+<!-- Col 2 -->
+<div class="bg-surface-base p-space-xl flex flex-col justify-between relative group hover:bg-surface-elevated transition-colors duration-200">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-border-interactive transition-all duration-300"></div>
+<div>
+<span class="font-headline-lg text-headline-lg text-text-tertiary group-hover:text-border-interactive transition-colors">02</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-space-md mb-space-sm">Web Applications</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            Complex SaaS cockpits, real-time collaboration dashboards, internal operational software, and data-dense enterprise consoles.
+          </p>
+</div>
+<ul class="space-y-space-xs font-code-inline text-body-sm text-text-secondary border-t border-border-subtle pt-space-md">
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Real-time WebSockets</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Role &amp; Permission RBAC</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Fault-Tolerant State</li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div class="bg-surface-base p-space-xl flex flex-col justify-between relative group hover:bg-surface-elevated transition-colors duration-200">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-border-interactive transition-all duration-300"></div>
+<div>
+<span class="font-headline-lg text-headline-lg text-text-tertiary group-hover:text-border-interactive transition-colors">03</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-space-md mb-space-sm">Mobile Applications</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            Cross-platform React Native &amp; Android native apps. Optimized for industrial scanners, offline data synchronization, and hardware sensors.
+          </p>
+</div>
+<ul class="space-y-space-xs font-code-inline text-body-sm text-text-secondary border-t border-border-subtle pt-space-md">
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Offline-First SQLite</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Camera &amp; Barcode Native</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Zero Latency Gestures</li>
+</ul>
+</div>
+<!-- Col 4 -->
+<div class="bg-surface-base p-space-xl flex flex-col justify-between relative group hover:bg-surface-elevated transition-colors duration-200">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-border-interactive transition-all duration-300"></div>
+<div>
+<span class="font-headline-lg text-headline-lg text-text-tertiary group-hover:text-border-interactive transition-colors">04</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-space-md mb-space-sm">ERP &amp; Business Systems</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-lg">
+            Deep Microsoft Dynamics 365 Business Central extensions, AL codebases, and custom enterprise middleware synchronizing legacy data silos.
+          </p>
+</div>
+<ul class="space-y-space-xs font-code-inline text-body-sm text-text-secondary border-t border-border-subtle pt-space-md">
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> AL Extension Dev</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Power Platform Automations</li>
+<li class="flex items-center gap-space-xs"><span class="text-border-interactive">›</span> Bi-directional Data Bridges</li>
+</ul>
+</div>
+</div>
+<!-- Action Banner -->
+<div class="mt-space-lg p-space-lg bg-surface-base border border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 bg-surface-elevated border border-border-subtle flex items-center justify-center text-border-interactive">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Need a tailored architectural assessment?</div>
+<div class="font-code-inline text-body-sm text-text-secondary">Direct review of your current stack, database bottlenecks, or ERP roadmap.</div>
+</div>
+</div>
+<a class="px-space-lg py-space-sm bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase hover:bg-infrared-bright transition-colors whitespace-nowrap" href="#contact-terminal">
+        Schedule Briefing →
+      </a>
+</div>
+</section>
+<!-- ==================== 5. DELIVERY PROCESS ==================== -->
+<section class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
+<span>// 04_DELIVERY_CYCLE</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+          From Idea to Launch.
+        </h2>
+</div>
+<span class="font-code-inline text-body-sm text-text-secondary">RIGOROUS 3-STEP CADENCE</span>
+</div>
+<!-- Connected 3-Step Process -->
+<div class="relative grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Timeline Connector Line behind elements on desktop -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-px bg-border-subtle z-0"></div>
+<!-- Step 01 -->
+<div class="relative z-10 bg-surface-base border border-border-subtle p-space-xl flex flex-col justify-between group hover:border-border-interactive transition-all">
+<div>
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-counter-num text-counter-num text-border-interactive font-bold">01</span>
+<span class="font-code-inline text-body-sm text-text-tertiary px-space-xs py-space-2xs bg-surface-deep border border-border-subtle">
+              PHASE // RECON
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-sm">Discovery &amp; Blueprint</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+            We deconstruct business constraints, user flows, and technical prerequisites. Deliverable is an exact architectural schematic and SLA agreement.
+          </p>
+</div>
+<div class="font-code-inline text-body-sm text-text-tertiary pt-space-md border-t border-border-subtle">
+          ESTIMATED: 5-7 BUSINESS DAYS
+        </div>
+</div>
+<!-- Step 02 -->
+<div class="relative z-10 bg-surface-base border border-border-subtle p-space-xl flex flex-col justify-between group hover:border-border-interactive transition-all">
+<div>
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-counter-num text-counter-num text-text-primary group-hover:text-border-interactive transition-colors font-bold">02</span>
+<span class="font-code-inline text-body-sm text-text-tertiary px-space-xs py-space-2xs bg-surface-deep border border-border-subtle">
+              PHASE // FORGE
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-sm">Build &amp; Integrate</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+            Rapid iterative sprints with continuous code review, automated staging environments, and constant transparency via interactive sandbox deployments.
+          </p>
+</div>
+<div class="font-code-inline text-body-sm text-text-tertiary pt-space-md border-t border-border-subtle">
+          ESTIMATED: 3-8 WEEKS (BY SCOPE)
+        </div>
+</div>
+<!-- Step 03 -->
+<div class="relative z-10 bg-surface-base border border-border-subtle p-space-xl flex flex-col justify-between group hover:border-border-interactive transition-all">
+<div>
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-counter-num text-counter-num text-text-primary group-hover:text-border-interactive transition-colors font-bold">03</span>
+<span class="font-code-inline text-body-sm text-text-tertiary px-space-xs py-space-2xs bg-surface-deep border border-border-subtle">
+              PHASE // DEPLOY
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-sm">Deploy &amp; Scale</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md">
+            Hardened production migration with zero-downtime database runs, end-to-end load testing, post-launch hypercare, and thorough knowledge handoff.
+          </p>
+</div>
+<div class="font-code-inline text-body-sm text-text-tertiary pt-space-md border-t border-border-subtle">
+          ESTIMATED: CONTINUOUS SLA SUPPORT
+        </div>
+</div>
+</div>
+</section>
+<!-- ==================== 6. SKILLS & ARSENAL ==================== -->
+<section class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-border-subtle pb-space-lg mb-space-2xl gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-xs">
+<span>// 05_STACK_ARSENAL</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+          Tools of Execution.
+        </h2>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-md">
+        Proven technologies selected for extreme reliability, developer velocity, and cross-platform flexibility.
+      </p>
+</div>
+<!-- 5-Column Stack Arsenal Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- FRONTEND -->
+<div class="bg-surface-base border border-border-subtle p-space-lg">
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-tertiary border-b border-border-subtle pb-space-sm mb-space-md">
+<span class="text-border-interactive">01</span><span>// FRONTEND</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Next.js 14 / SSR</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">React / TypeScript</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Tailwind CSS</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">State Engines</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+</div>
+</div>
+<!-- BACKEND -->
+<div class="bg-surface-base border border-border-subtle p-space-lg">
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-tertiary border-b border-border-subtle pb-space-sm mb-space-md">
+<span class="text-border-interactive">02</span><span>// BACKEND</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Node.js / Express</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">REST &amp; GraphQL</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">PostgreSQL / SQL</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Redis Caching</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+</div>
+</div>
+<!-- MOBILE -->
+<div class="bg-surface-base border border-border-subtle p-space-lg">
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-tertiary border-b border-border-subtle pb-space-sm mb-space-md">
+<span class="text-border-interactive">03</span><span>// MOBILE</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">React Native</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Android Native Modules</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Offline SQLite</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Zebra &amp; Honeywell SDK</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+</div>
+</div>
+<!-- ERP & CLOUD -->
+<div class="bg-surface-base border border-border-subtle p-space-lg">
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-tertiary border-b border-border-subtle pb-space-sm mb-space-md">
+<span class="text-border-interactive">04</span><span>// ERP &amp; CLOUD</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Dynamics 365 BC</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">AL Language</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Power Automate</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Azure Cloud Services</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+</div>
+</div>
+<!-- DATA & TOOLS -->
+<div class="bg-surface-base border border-border-subtle p-space-lg">
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-text-tertiary border-b border-border-subtle pb-space-sm mb-space-md">
+<span class="text-border-interactive">05</span><span>// DATA &amp; INFRA</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Git &amp; CI/CD Pipelines</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Docker Containers</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Prisma ORM</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+<div class="stack-pill group p-space-xs px-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-all flex items-center justify-between">
+<span class="font-code-inline text-body-sm text-text-primary">Telemetry &amp; Logs</span>
+<span class="w-1.5 h-1.5 bg-border-interactive opacity-0 group-hover:opacity-100 transition-opacity"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 7. CONTACT TERMINAL ==================== -->
+<section class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-5xl" id="contact-terminal">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl bg-surface-base border border-border-subtle p-space-xl lg:p-space-3xl relative overflow-hidden">
+<!-- Top Decorative Hairline Indicator -->
+<div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-border-interactive via-infrared-bright to-transparent"></div>
+<!-- Left Column: Lead Engineer & Channels -->
+<div class="lg:col-span-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs font-code-inline text-body-sm text-border-interactive mb-space-sm">
+<span>// 06_COMMUNICATION_LINK</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary mb-space-md">
+            Initiate Project Brief.
+          </h2>
+<p class="font-body-md text-body-md text-text-secondary mb-space-2xl leading-relaxed">
+            Ready to build a resilient web ecosystem, launch a mobile platform, or upgrade your ERP operations? Direct access to Shubam Padha. No intermediary account managers.
+          </p>
+<!-- Founder Bio Micro Card -->
+<div class="p-space-md bg-surface-deep border border-border-subtle mb-space-2xl flex items-center gap-space-md">
+<div class="w-12 h-12 bg-surface-elevated border border-border-subtle flex items-center justify-center text-text-primary font-headline-sm font-bold">
+              SP
+            </div>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Shubam Padha</div>
+<div class="font-code-inline text-body-sm text-text-secondary">Lead Architect &amp; Studio Director</div>
+</div>
+</div>
+<!-- Direct Coordinates -->
+<div class="space-y-space-md">
+<a class="flex items-center gap-space-md p-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-colors group" href="mailto:contact@vaskoi.in">
+<span class="material-symbols-outlined text-border-interactive text-[20px]">mail</span>
+<div class="flex flex-col">
+<span class="font-code-inline text-body-sm text-text-tertiary">OFFICIAL_MAIL</span>
+<span class="font-body-md text-body-md text-text-primary group-hover:text-white transition-colors">contact@vaskoi.in</span>
+</div>
+</a>
+<a class="flex items-center gap-space-md p-space-sm bg-surface-elevated border border-border-subtle hover:border-border-interactive transition-colors group" href="tel:+916005791807">
+<span class="material-symbols-outlined text-border-interactive text-[20px]">call</span>
+<div class="flex flex-col">
+<span class="font-code-inline text-body-sm text-text-tertiary">DIRECT_TERMINAL</span>
+<span class="font-body-md text-body-md text-text-primary group-hover:text-white transition-colors">+91 6005791807</span>
+</div>
+</a>
+</div>
+</div>
+<div class="pt-space-2xl flex items-center gap-space-sm font-code-inline text-body-sm text-text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>SLA RESPONSE TIME: UNDER 12 HOURS</span>
+</div>
+</div>
+<!-- Right Column: Interactive Project Inquiry Terminal Form -->
+<div class="lg:col-span-7 bg-surface-deep p-space-xl lg:p-space-2xl border border-border-subtle">
+<form class="flex flex-col gap-space-lg" id="project-form" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-text-secondary" for="contact-name">
+                Your Name / Representative
+              </label>
+<input class="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="contact-name" placeholder="e.g. Alex Chen" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-text-secondary" for="contact-email">
+                Work Email Address
+              </label>
+<input class="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="contact-email" placeholder="alex@company.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-text-secondary" for="system-category">
+              Primary System Scope
+            </label>
+<select class="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors" id="system-category">
+<option value="web-systems">Web Systems &amp; Headless Platforms</option>
+<option value="custom-saas">Custom Web Applications &amp; Dashboards</option>
+<option value="mobile-systems">Mobile Applications (Android / React Native)</option>
+<option value="dynamics-365">Dynamics 365 Business Central / AL Extensions</option>
+<option value="comprehensive">Comprehensive Architecture Re-engineering</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-text-secondary" for="project-summary">
+              Project Specification &amp; Timeline Targets
+            </label>
+<textarea class="w-full bg-surface-base border border-border-subtle px-space-md py-space-sm text-text-primary font-code-inline text-body-md focus:outline-none focus:border-border-interactive transition-colors resize-none" id="project-summary" placeholder="Provide high-level architecture details, timeline expectations, or pain points in your current stack..." required="" rows="4"></textarea>
+</div>
+<!-- Transmission Status Message -->
+<div class="hidden p-space-md bg-surface-elevated border border-tertiary text-tertiary font-code-inline text-body-sm flex items-center gap-space-sm" id="form-feedback">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>TRANSMISSION_CONFIRMED: Project brief registered into Vaskoi queue. Check your inbox for scheduling link.</span>
+</div>
+<button class="group relative w-full py-space-md bg-border-interactive text-text-primary font-label-caps text-label-caps uppercase tracking-wider overflow-hidden hover:bg-infrared-bright transition-all flex items-center justify-center gap-space-sm" type="submit">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:-translate-y-0.5">send</span>
+<span>Transmit Project Brief to Shubam</span>
+<span class="font-code-inline text-body-sm text-white/70">[ENTER]</span>
+</button>
+<p class="font-code-inline text-body-sm text-text-tertiary text-center">
+            Encrypted End-to-End // Non-Disclosure Protocol Active by Default
+          </p>
+</form>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Preloader Logic
+  const steps = [
+    { percent: 18, text: "ESTABLISHING SECURE PROTOCOL...", log: "> HANDSHAKE: VASKOI_CORE_TLS ACTIVE" },
+    { percent: 45, text: "LOADING DYNAMICS 365 BC ARCHITECTURE...", log: "> ATTACHING AL EXTENSION REPOSITORY & ODAV4" },
+    { percent: 78, text: "OPTIMIZING ZERO-LATENCY RUNTIME ENGINES...", log: "> WMS SCANNER DRIVERS MOUNTED [SUB-50MS SLA]" },
+    { percent: 100, text: "SYSTEM STATUS: NOMINAL // ALL SYSTEMS GO", log: "> TELEMETRY VERIFIED: DISPERSING CURTAIN" }
+  ];
+
+  let preloaderInterval = null;
+
+  function runPreloader() {
+    const preloader = document.getElementById('vaskoi-preloader');
+    const percentEl = document.getElementById('preloader-percent');
+    const barEl = document.getElementById('preloader-bar');
+    const stepEl = document.getElementById('preloader-step-text');
+    const log1 = document.getElementById('preloader-log-1');
+    const log2 = document.getElementById('preloader-log-2');
+    const log3 = document.getElementById('preloader-log-3');
+
+    if (!preloader) return;
+
+    // Reset styles
+    preloader.style.opacity = '1';
+    preloader.style.pointerEvents = 'auto';
+    preloader.style.transform = 'scale(1)';
+    preloader.style.filter = 'blur(0px)';
+    
+    let currentPercent = 0;
+    let stepIndex = 0;
+    if (preloaderInterval) clearInterval(preloaderInterval);
+
+    preloaderInterval = setInterval(() => {
+      // Non-linear pacing for realistic tech feel
+      const increment = Math.floor(Math.random() * 6) + 2;
+      currentPercent += increment;
+
+      if (currentPercent >= 100) {
+        currentPercent = 100;
+        clearInterval(preloaderInterval);
+      }
+
+      // Update percent and bar width
+      if (percentEl) percentEl.textContent = currentPercent < 10 ? '0' + currentPercent : currentPercent;
+      if (barEl) barEl.style.width = currentPercent + '%';
+
+      // Update text milestone steps
+      if (currentPercent > 15 && currentPercent <= 45 && stepIndex === 0) {
+        stepIndex = 1;
+        stepEl.textContent = steps[1].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[1].log;
+      } else if (currentPercent > 45 && currentPercent <= 80 && stepIndex === 1) {
+        stepIndex = 2;
+        stepEl.textContent = steps[2].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[2].log;
+      } else if (currentPercent >= 95 && stepIndex === 2) {
+        stepIndex = 3;
+        stepEl.textContent = steps[3].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[3].log;
+      }
+
+      // Completed sequence
+      if (currentPercent >= 100) {
+        setTimeout(() => {
+          preloader.style.opacity = '0';
+          preloader.style.transform = 'scale(1.04)';
+          preloader.style.filter = 'blur(10px)';
+          preloader.style.pointerEvents = 'none';
+        }, 320);
+      }
+    }, 38);
+  }
+
+  function skipPreloader() {
+    if (preloaderInterval) clearInterval(preloaderInterval);
+    const preloader = document.getElementById('vaskoi-preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transform = 'scale(1.04)';
+      preloader.style.filter = 'blur(10px)';
+      preloader.style.pointerEvents = 'none';
+    }
+  }
+
+  function replayPreloader() {
+    runPreloader();
+  }
+
+  // Start sequence on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    runPreloader();
+  });
+
+  // Spotlight Glow Interaction for Bento Cards
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.bento-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(255, 42, 27, 0.08), #0E0E12 80%)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.background = '';
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-base border-t border-border-subtle py-space-3xl mt-space-4xl"><div class="max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-2xl pb-space-2xl border-b border-border-subtle"><div class="md:col-span-6 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md text-text-primary uppercase">VASKOI</span><span class="font-code-inline text-code-inline text-text-secondary">[STUDIO]</span></div><p class="font-body-md text-body-md text-text-secondary max-w-md">High-performance digital engineering studio directed by Shubam Padha. Architecting resilient full-stack systems, modern ERP foundations, and enterprise mobile solutions.</p></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-text-tertiary tracking-wider">Operational Coordinates</span><a class="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="mailto:contact@vaskoi.engineering"><span class="material-symbols-outlined text-[16px] text-text-secondary">mail</span><span>contact@vaskoi.engineering</span></a><a class="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="tel:+10000000000"><span class="material-symbols-outlined text-[16px] text-text-secondary">call</span><span>+1 (Direct Terminal)</span></a></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-text-tertiary tracking-wider">Codebases &amp; Registry</span><a class="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="#"><span class="material-symbols-outlined text-[16px] text-text-secondary">terminal</span><span>GitHub Protocol</span></a><a class="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="#"><span class="material-symbols-outlined text-[16px] text-text-secondary">hub</span><span>Open Source Registry</span></a></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-text-secondary">© 2024–2026 Shubam Padha. Built with lots of coffee.</p><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 bg-tertiary"></span><span class="font-code-inline text-code-inline text-text-tertiary">SYS_STATUS: ALL SYSTEMS NOMINAL</span></div></div></div></footer></body></html>
