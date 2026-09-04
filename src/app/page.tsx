@@ -86,7 +86,7 @@ export default function Home() {
     }, 38);
   }
 
-  function (window as any).skipPreloader() {
+  window.skipPreloader = function() {
     if (preloaderInterval) clearInterval(preloaderInterval);
     const preloader = (document as any).getElementById('vaskoi-preloader');
     if (preloader) {
@@ -97,17 +97,17 @@ export default function Home() {
     }
   }
 
-  function (window as any).replayPreloader() {
+  window.replayPreloader = function() {
     runPreloader();
   }
 
   // Start sequence on page load
-  window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
     runPreloader();
   });
 
   // Spotlight Glow Interaction for Bento Cards
-  document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
     const cards = document.querySelectorAll('.bento-card');
     cards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
