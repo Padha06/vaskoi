@@ -47,6 +47,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${jetbrainsMono.variable} ${spaceGrotesk.variable} dark`}>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+      </head>
+
       <body className="bg-surface-deep font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col">
         {children}
       </body>
