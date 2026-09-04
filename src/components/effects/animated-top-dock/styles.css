@@ -159,6 +159,9 @@
 
   .dock-nav {
     position: relative;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: calc(100vw - 120px);
     top: auto;
     left: auto;
     transform: none;
@@ -192,3 +195,5 @@
     transform: none !important;
   }
 }
+
+.dock-nav::-webkit-scrollbar { display: none; }

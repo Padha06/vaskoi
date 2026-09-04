@@ -24,9 +24,7 @@ const DEFAULTS = {
 
 const NAV_ITEMS = [
   {
-    id: 'work',
-    label: 'WORK',
-    href: '#',
+    id: 'work', label: 'WORK', href: '#case-studies', // We will replace these individually below
     sectionId: 'work',
     icon: (
       <>
@@ -36,9 +34,7 @@ const NAV_ITEMS = [
     ),
   },
   {
-    id: 'services',
-    label: 'SERVICES',
-    href: '#',
+    id: 'services', label: 'SERVICES', href: '#services', // We will replace these individually below
     sectionId: 'services',
     icon: (
       <>
@@ -50,9 +46,7 @@ const NAV_ITEMS = [
     ),
   },
   {
-    id: 'process',
-    label: 'PROCESS',
-    href: '#',
+    id: 'process', label: 'PROCESS', href: '#process', // We will replace these individually below
     sectionId: 'process',
     icon: (
       <>
@@ -62,9 +56,7 @@ const NAV_ITEMS = [
     ),
   },
   {
-    id: 'stack',
-    label: 'STACK',
-    href: '#',
+    id: 'stack', label: 'STACK', href: '#stack', // We will replace these individually below
     sectionId: 'stack',
     icon: (
       <>
@@ -73,9 +65,7 @@ const NAV_ITEMS = [
     ),
   },
   {
-    id: 'contact',
-    label: 'CONTACT',
-    href: '#',
+    id: 'contact', label: 'CONTACT', href: '#contact-terminal', // We will replace these individually below
     sectionId: 'contact',
     icon: (
       <>
@@ -91,7 +81,7 @@ const SECTION_TO_NAV: Record<string, string> = {
   services: 'services',
   process: 'process',
   stack: 'stack',
-  contact: 'contact',
+  'contact-terminal': 'contact',
 }
 
 export default function AnimatedTopDock({
