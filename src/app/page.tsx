@@ -8,126 +8,6 @@ import '@/components/effects/animated-top-dock/styles.css';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  
-  useEffect(() => {
-    // Preloader Logic
-    const steps = [
-      { percent: 18, text: "ESTABLISHING SECURE PROTOCOL...", log: "> HANDSHAKE: VASKOI_CORE_TLS ACTIVE" },
-      { percent: 45, text: "LOADING DYNAMICS 365 BC ARCHITECTURE...", log: "> ATTACHING AL EXTENSION REPOSITORY & ODAV4" },
-      { percent: 78, text: "OPTIMIZING ZERO-LATENCY RUNTIME ENGINES...", log: "> WMS SCANNER DRIVERS MOUNTED [SUB-50MS SLA]" },
-      { percent: 100, text: "SYSTEM STATUS: NOMINAL // ALL SYSTEMS GO", log: "> TELEMETRY VERIFIED: DISPERSING CURTAIN" }
-    ];
-
-    let preloaderInterval: NodeJS.Timeout | null = null;
-
-    function runPreloader() {
-      const preloader = document.getElementById('vaskoi-preloader');
-      const percentEl = document.getElementById('preloader-percent');
-      const barEl = document.getElementById('preloader-bar');
-      const stepEl = document.getElementById('preloader-step-text');
-      const log1 = document.getElementById('preloader-log-1');
-      const log2 = document.getElementById('preloader-log-2');
-      const log3 = document.getElementById('preloader-log-3');
-
-      if (!preloader) return;
-
-      // Reset styles
-      preloader.style.opacity = '1';
-      preloader.style.pointerEvents = 'auto';
-      preloader.style.transform = 'scale(1)';
-      preloader.style.filter = 'blur(0px)';
-      
-      let currentPercent = 0;
-      let stepIndex = 0;
-      if (preloaderInterval) clearInterval(preloaderInterval);
-
-      // Target 2.5 seconds total. 2500ms / 25ms = 100 steps.
-      preloaderInterval = setInterval(() => {
-        currentPercent += 1;
-
-        if (currentPercent >= 100) {
-          currentPercent = 100;
-          if (preloaderInterval) clearInterval(preloaderInterval);
-        }
-
-        // Update percent and bar width
-        if (percentEl) percentEl.textContent = currentPercent < 10 ? '0' + currentPercent.toString() : currentPercent.toString();
-        if (barEl) barEl.style.width = currentPercent + '%';
-
-        // Update text milestone steps
-        if (currentPercent > 15 && currentPercent <= 45 && stepIndex === 0) {
-          stepIndex = 1;
-          if(stepEl) stepEl.textContent = steps[1].text;
-          if(log3 && log2) log3.textContent = log2.textContent;
-          if(log2 && log1) log2.textContent = log1.textContent;
-          if(log1) log1.textContent = steps[1].log;
-        } else if (currentPercent > 45 && currentPercent <= 80 && stepIndex === 1) {
-          stepIndex = 2;
-          if(stepEl) stepEl.textContent = steps[2].text;
-          if(log3 && log2) log3.textContent = log2.textContent;
-          if(log2 && log1) log2.textContent = log1.textContent;
-          if(log1) log1.textContent = steps[2].log;
-        } else if (currentPercent >= 95 && stepIndex === 2) {
-          stepIndex = 3;
-          if(stepEl) stepEl.textContent = steps[3].text;
-          if(log3 && log2) log3.textContent = log2.textContent;
-          if(log2 && log1) log2.textContent = log1.textContent;
-          if(log1) log1.textContent = steps[3].log;
-        }
-
-        // Completed sequence
-        if (currentPercent >= 100) {
-          setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.transform = 'scale(1.04)';
-            preloader.style.filter = 'blur(10px)';
-            preloader.style.pointerEvents = 'none';
-          }, 320);
-        }
-      }, 25);
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).skipPreloader = function() {
-      if (preloaderInterval) clearInterval(preloaderInterval);
-      const preloader = document.getElementById('vaskoi-preloader');
-      if (preloader) {
-        preloader.style.opacity = '0';
-        preloader.style.transform = 'scale(1.04)';
-        preloader.style.filter = 'blur(10px)';
-        preloader.style.pointerEvents = 'none';
-      }
-    };
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).replayPreloader = function() {
-      runPreloader();
-    };
-
-    // Start sequence
-    runPreloader();
-
-    // Spotlight Glow Interaction for Bento Cards
-    const cards = document.querySelectorAll('.bento-card');
-    cards.forEach(card => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      card.addEventListener('mousemove', (e: any) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        (card as HTMLElement).style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(255, 42, 27, 0.08), #0E0E12 80%)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        (card as HTMLElement).style.background = '';
-      });
-    });
-    
-    return () => {
-       if (preloaderInterval) clearInterval(preloaderInterval);
-    }
-  }, []);
-
   return (
     <>
       
@@ -1058,6 +938,117 @@ export default function Home() {
 </section>
 </div>
 </main><footer className="w-full bg-surface-base border-t border-border-subtle py-space-3xl mt-space-4xl"><div className="max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div className="grid grid-cols-1 md:grid-cols-12 gap-space-2xl pb-space-2xl border-b border-border-subtle"><div className="md:col-span-6 flex flex-col gap-space-md"><div className="flex items-center gap-space-sm"><span className="font-headline-md text-headline-md text-text-primary uppercase">VASKOI</span><span className="font-code-inline text-code-inline text-text-secondary">[STUDIO]</span></div><p className="font-body-md text-body-md text-text-secondary max-w-md">High-performance digital engineering studio directed by Vaskoi Team. Architecting resilient full-stack systems, modern ERP foundations, and enterprise mobile solutions.</p></div><div className="md:col-span-3 flex flex-col gap-space-sm"><span className="font-label-caps text-label-caps uppercase text-text-tertiary tracking-wider">Operational Coordinates</span><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="mailto:shubam@vaskoi.in"><span className="material-symbols-outlined text-[16px] text-text-secondary">mail</span><span>shubam@vaskoi.in</span></a><a className="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors flex items-center gap-space-xs" href="tel:+919682527054"><span className="material-symbols-outlined text-[16px] text-text-secondary">call</span><span>+91 9682527054</span></a></div></div><div className="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><p className="font-body-sm text-body-sm text-text-secondary">© 2024–2026 Vaskoi Team. Built with lots of coffee.</p><div className="flex items-center gap-space-sm"><span className="w-1.5 h-1.5 bg-tertiary"></span><span className="font-code-inline text-code-inline text-text-tertiary">SYS_STATUS: ALL SYSTEMS NOMINAL</span></div></div></div></footer>
+    
+<script suppressHydrationWarning dangerouslySetInnerHTML={{__html: `
+  (function() {
+    const steps = [
+      { percent: 18, text: "ESTABLISHING SECURE PROTOCOL...", log: "> HANDSHAKE: VASKOI_CORE_TLS ACTIVE" },
+      { percent: 45, text: "LOADING DYNAMICS 365 BC ARCHITECTURE...", log: "> ATTACHING AL EXTENSION REPOSITORY & ODAV4" },
+      { percent: 78, text: "OPTIMIZING ZERO-LATENCY RUNTIME ENGINES...", log: "> WMS SCANNER DRIVERS MOUNTED [SUB-50MS SLA]" },
+      { percent: 100, text: "SYSTEM STATUS: NOMINAL // ALL SYSTEMS GO", log: "> TELEMETRY VERIFIED: DISPERSING CURTAIN" }
+    ];
+
+    let preloaderInterval = null;
+
+    function runPreloader() {
+      const preloader = document.getElementById('vaskoi-preloader');
+      const percentEl = document.getElementById('preloader-percent');
+      const barEl = document.getElementById('preloader-bar');
+      const stepEl = document.getElementById('preloader-step-text');
+      const log1 = document.getElementById('preloader-log-1');
+      const log2 = document.getElementById('preloader-log-2');
+      const log3 = document.getElementById('preloader-log-3');
+
+      if (!preloader) return;
+
+      preloader.style.opacity = '1';
+      preloader.style.pointerEvents = 'auto';
+      preloader.style.transform = 'scale(1)';
+      preloader.style.filter = 'blur(0px)';
+      
+      let currentPercent = 0;
+      let stepIndex = 0;
+      if (preloaderInterval) clearInterval(preloaderInterval);
+
+      preloaderInterval = setInterval(() => {
+        currentPercent += 1;
+
+        if (currentPercent >= 100) {
+          currentPercent = 100;
+          clearInterval(preloaderInterval);
+        }
+
+        if (percentEl) percentEl.textContent = currentPercent < 10 ? '0' + currentPercent : currentPercent;
+        if (barEl) barEl.style.width = currentPercent + '%';
+
+        if (currentPercent > 15 && currentPercent <= 45 && stepIndex === 0) {
+          stepIndex = 1;
+          if(stepEl) stepEl.textContent = steps[1].text;
+          if(log3 && log2) log3.textContent = log2.textContent;
+          if(log2 && log1) log2.textContent = log1.textContent;
+          if(log1) log1.textContent = steps[1].log;
+        } else if (currentPercent > 45 && currentPercent <= 80 && stepIndex === 1) {
+          stepIndex = 2;
+          if(stepEl) stepEl.textContent = steps[2].text;
+          if(log3 && log2) log3.textContent = log2.textContent;
+          if(log2 && log1) log2.textContent = log1.textContent;
+          if(log1) log1.textContent = steps[2].log;
+        } else if (currentPercent >= 95 && stepIndex === 2) {
+          stepIndex = 3;
+          if(stepEl) stepEl.textContent = steps[3].text;
+          if(log3 && log2) log3.textContent = log2.textContent;
+          if(log2 && log1) log2.textContent = log1.textContent;
+          if(log1) log1.textContent = steps[3].log;
+        }
+
+        if (currentPercent >= 100) {
+          setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.transform = 'scale(1.04)';
+            preloader.style.filter = 'blur(10px)';
+            preloader.style.pointerEvents = 'none';
+          }, 320);
+        }
+      }, 25);
+    }
+
+    // Run it immediately!
+    runPreloader();
+
+    // Attach to window just in case
+    window.skipPreloader = function() {
+      if (preloaderInterval) clearInterval(preloaderInterval);
+      const p = document.getElementById('vaskoi-preloader');
+      if (p) {
+        p.style.opacity = '0';
+        p.style.transform = 'scale(1.04)';
+        p.style.filter = 'blur(10px)';
+        p.style.pointerEvents = 'none';
+      }
+    };
+    window.replayPreloader = function() {
+      runPreloader();
+    };
+
+    // Bento card glow effect
+    setTimeout(() => {
+      const cards = document.querySelectorAll('.bento-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.background = 'radial-gradient(400px circle at ' + x + 'px ' + y + 'px, rgba(255, 42, 27, 0.08), #0E0E12 80%)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.background = '';
+        });
+      });
+    }, 1000); // give bento cards time to render
+
+  })();
+`}} />
+
     </>
   );
 }
