@@ -513,26 +513,12 @@ export default function Home() {
 </div>
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep flex items-center justify-center p-space-md">
-
-<div className="w-full h-full border border-border-subtle bg-surface-deep/90 p-space-md flex flex-col justify-between relative group-hover:border-text-secondary transition-colors">
-<div className="flex items-center justify-between border-b border-border-subtle pb-space-xs font-code-inline text-body-sm text-text-secondary">
-<span>BC_ANALYTICS // REALTIME</span>
-<span className="text-tertiary">OK</span>
-</div>
-<div className="flex items-end justify-between gap-space-xs h-24 pt-space-sm">
-<div className="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[40%]"></div>
-<div className="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[65%]"></div>
-<div className="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[85%]"></div>
-<div className="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[50%]"></div>
-<div className="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[95%]"></div>
-<div className="w-full bg-border-subtle group-hover:bg-border-interactive transition-colors h-[75%]"></div>
-</div>
-<div className="font-code-inline text-body-sm text-text-tertiary flex justify-between">
-<span>LEDGER SYNC: 100%</span>
-<span>12ms DURATION</span>
-</div>
-</div>
+<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="Dynamics 365 BC Custom Cockpit" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/dynamics-365.png"/>
+<div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
+<span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
+            ERP_DASHBOARD
+          </span>
 </div>
 <div className="p-space-lg flex-1 flex flex-col justify-between">
 <div>
@@ -553,21 +539,12 @@ export default function Home() {
 </div>
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep flex items-center justify-center p-space-md">
-<div className="w-full h-full border border-border-subtle bg-surface-deep/90 p-space-md flex flex-col justify-between">
-<div className="flex items-center justify-between font-code-inline text-body-sm text-text-secondary">
-<span>CRYPTO_VERIFY // HASH</span>
-<span className="text-border-interactive">LOCKED</span>
-</div>
-<div className="p-space-sm bg-surface-elevated border border-border-subtle">
-<div className="font-code-inline text-body-sm text-text-primary">DOC_ID: #SIG-8921-X9</div>
-<div className="font-code-inline text-body-sm text-text-tertiary">SHA256: 8f4e2...a90b1</div>
-<div className="w-full bg-border-subtle h-1 mt-space-xs overflow-hidden">
-<div className="bg-border-interactive h-full w-4/5 animate-pulse"></div>
-</div>
-</div>
-<span className="font-code-inline text-body-sm text-text-secondary">STATUS: AUTOMATED POWER AUTOMATE TRIGGER</span>
-</div>
+<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="E-Signature Workflow Integration" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/esignature.png"/>
+<div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
+<span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
+            WORKFLOW_INTEGRATION
+          </span>
 </div>
 <div className="p-space-lg flex-1 flex flex-col justify-between">
 <div>
@@ -589,7 +566,7 @@ export default function Home() {
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
 <div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dark aesthetic cinematic portfolio website interface preview for a film and creative studio named AfterLight with bold typography high contrast lighting deep graphite and incandescent red highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDNnQRrWs3KVLHz-f3BI09MPILA2N-oMm8mSNgtM2e__okCgb9VA3HNkL6Pa7ldhytge97U1fSvRRSg6ndu7R1iLM4ZfLdUIMmEb-VutCdlsW3Tyyr0JuVe5UOrWGHzMQk0VHX9i3Omk4TW-O3Ese2CuDqpstGULKbiJiLo4sZIinfzAExNQSnqSIHLpThGOA3SZBXj1hVXk_DezfmhNgZD8tfRmfWTzh7GUOHWJwF6DDwA8ndz8dr"/>
+<img alt="AfterLight Creative Studio" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/afterlight.png"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             DIGITAL_SHOWCASE
@@ -615,7 +592,7 @@ export default function Home() {
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
 <div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern technical customer portal interface for renovation company DAP Canada with project estimation calculators interactive blueprints sleek dark theme and crisp numeric data displays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeAJ1lo_p6d2MTEq7wvRyqSFUdZfyspVpyuZsc28Fjyz6AADylWHdHuQFmlwGhJL2IlF9SGn4FUSk-OJwWIuKqFxU_86C95HK3ZZG8MrQYFzYm0MNlhnPyxCfzYM5Lt8MqMfyqEl_kOjaqD8Oz7iUuGUX2Lpn8MU127cmw16nBtLSJ-k60HNZxPmfsy0sg_mubi-SmP0DyN-Nn4oWJ8Dv_ly-YXbEvQTC7D-IOAxZVZxPcu3x8yrKP"/>
+<img alt="DAP Canada Client Portal" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/dap-canada.png"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             PORTAL_ENGINE
@@ -641,7 +618,7 @@ export default function Home() {
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
 <div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Computer hardware ecommerce web store interface showcasing custom PC builder component compatibility checks obsidian dark UI and neon red spec badges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6tFj_7nEOiUtivLv_tbH7jtpMjbsHHMG2c8rRFFy0EWBCataH2G1IlYRpeZimb6Tx-Txuc4MP82z5ASA_UewGZP5SjEiDQdzurWa-V5Zvg4owY3nKZnKyiHN1AUCfQ7R_CF0QzkP4CWJ86ZpgnzimvzDrVTXUoVs6S0OwKtU5YMCQr2NoQwQv6047JAiIqhON_PfXAOK0kj_EQW04p6pAxZi5xXYnyrEVKfrSPKiHWG37DHfTK-uQ"/>
+<img alt="One Stop Computer Shop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/one-stop.jpg"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             HARDWARE_STORE
