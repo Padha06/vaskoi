@@ -11,8 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <Script id="vaskoi-logic" strategy="lazyOnload">
-        {`
+      <script id="vaskoi-logic" dangerouslySetInnerHTML={{__html: `
           
   // Preloader Logic
   const steps = [
@@ -128,8 +127,7 @@ export default function Home() {
     });
   });
 
-        `}
-      </Script>
+        `}} />
       
 
 <div className="fixed inset-0 z-[100] bg-[#08080A] flex flex-col items-center justify-center text-white overflow-hidden select-none transition-all duration-700 ease-out" id="vaskoi-preloader">
@@ -484,8 +482,8 @@ export default function Home() {
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img alt="ScanGo WMS scanner system running" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XMkRmAecuOTznhX8AkA2HvYfq2OTb0JzpcXxCQvDU_e4n1LC-n4V5xXudCI1aFqUrqinFsmkUIZ3Ji_oEFnz3NypGHYyOI2GkcEeHs23K99yMl9ytOJICA_hXFndo3CsHAMxUvMsUiVUl22Q9hq1o3pLNpaKzdZieLpRvWU6O3-auFl3TA-O-P75XzeQlBaMiXoUjhwKZUCrw2a5TspCw-jZg4tpp03-HcUH4B4W7ys75wql8VCofUUw"/>
+<div className="relative h-48 md:h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="ScanGo WMS scanner system running" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XMkRmAecuOTznhX8AkA2HvYfq2OTb0JzpcXxCQvDU_e4n1LC-n4V5xXudCI1aFqUrqinFsmkUIZ3Ji_oEFnz3NypGHYyOI2GkcEeHs23K99yMl9ytOJICA_hXFndo3CsHAMxUvMsUiVUl22Q9hq1o3pLNpaKzdZieLpRvWU6O3-auFl3TA-O-P75XzeQlBaMiXoUjhwKZUCrw2a5TspCw-jZg4tpp03-HcUH4B4W7ys75wql8VCofUUw"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-border-interactive text-white font-label-caps text-label-caps uppercase tracking-wider">
             FEATURED RIG
@@ -513,8 +511,8 @@ export default function Home() {
 </div>
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img alt="Dynamics 365 BC Custom Cockpit" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/dynamics-365.png"/>
+<div className="relative h-48 md:h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="Dynamics 365 BC Custom Cockpit" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/dynamics-365.png"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             ERP_DASHBOARD
@@ -539,8 +537,8 @@ export default function Home() {
 </div>
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img alt="E-Signature Workflow Integration" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/esignature.png"/>
+<div className="relative h-48 md:h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="E-Signature Workflow Integration" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/esignature.png"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             WORKFLOW_INTEGRATION
@@ -565,8 +563,8 @@ export default function Home() {
 </div>
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img alt="AfterLight Creative Studio" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/afterlight.png"/>
+<div className="relative h-48 md:h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="AfterLight Creative Studio" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/afterlight.png"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             DIGITAL_SHOWCASE
@@ -591,8 +589,8 @@ export default function Home() {
 </div>
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img alt="DAP Canada Client Portal" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/dap-canada.png"/>
+<div className="relative h-48 md:h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="DAP Canada Client Portal" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/dap-canada.png"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             PORTAL_ENGINE
@@ -617,8 +615,8 @@ export default function Home() {
 </div>
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
-<div className="relative h-60 w-full overflow-hidden bg-surface-deep">
-<img alt="One Stop Computer Shop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/one-stop.jpg"/>
+<div className="relative h-48 md:h-60 w-full overflow-hidden bg-surface-deep">
+<img alt="One Stop Computer Shop" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/one-stop.jpg"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-surface-deep/90 border border-border-subtle font-code-inline text-body-sm text-text-primary">
             HARDWARE_STORE

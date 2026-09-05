@@ -1,0 +1,119 @@
+
+        {`
+          
+  // Preloader Logic
+  const steps = [
+    { percent: 18, text: "ESTABLISHING SECURE PROTOCOL...", log: "> HANDSHAKE: VASKOI_CORE_TLS ACTIVE" },
+    { percent: 45, text: "LOADING DYNAMICS 365 BC ARCHITECTURE...", log: "> ATTACHING AL EXTENSION REPOSITORY & ODAV4" },
+    { percent: 78, text: "OPTIMIZING ZERO-LATENCY RUNTIME ENGINES...", log: "> WMS SCANNER DRIVERS MOUNTED [SUB-50MS SLA]" },
+    { percent: 100, text: "SYSTEM STATUS: NOMINAL // ALL SYSTEMS GO", log: "> TELEMETRY VERIFIED: DISPERSING CURTAIN" }
+  ];
+
+  let preloaderInterval = null;
+
+  function runPreloader() {
+    const preloader = document.getElementById('vaskoi-preloader');
+    const percentEl = document.getElementById('preloader-percent');
+    const barEl = document.getElementById('preloader-bar');
+    const stepEl = document.getElementById('preloader-step-text');
+    const log1 = document.getElementById('preloader-log-1');
+    const log2 = document.getElementById('preloader-log-2');
+    const log3 = document.getElementById('preloader-log-3');
+
+    if (!preloader) return;
+
+    // Reset styles
+    preloader.style.opacity = '1';
+    preloader.style.pointerEvents = 'auto';
+    preloader.style.transform = 'scale(1)';
+    preloader.style.filter = 'blur(0px)';
+    
+    let currentPercent = 0;
+    let stepIndex = 0;
+    if (preloaderInterval) clearInterval(preloaderInterval);
+
+    preloaderInterval = setInterval(() => {
+      // Non-linear pacing for realistic tech feel
+      const increment = Math.floor(Math.random() * 6) + 2;
+      currentPercent += increment;
+
+      if (currentPercent >= 100) {
+        currentPercent = 100;
+        clearInterval(preloaderInterval);
+      }
+
+      // Update percent and bar width
+      if (percentEl) percentEl.textContent = currentPercent < 10 ? '0' + currentPercent : currentPercent;
+      if (barEl) barEl.style.width = currentPercent + '%';
+
+      // Update text milestone steps
+      if (currentPercent > 15 && currentPercent <= 45 && stepIndex === 0) {
+        stepIndex = 1;
+        stepEl.textContent = steps[1].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[1].log;
+      } else if (currentPercent > 45 && currentPercent <= 80 && stepIndex === 1) {
+        stepIndex = 2;
+        stepEl.textContent = steps[2].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[2].log;
+      } else if (currentPercent >= 95 && stepIndex === 2) {
+        stepIndex = 3;
+        stepEl.textContent = steps[3].text;
+        log3.textContent = log2.textContent;
+        log2.textContent = log1.textContent;
+        log1.textContent = steps[3].log;
+      }
+
+      // Completed sequence
+      if (currentPercent >= 100) {
+        setTimeout(() => {
+          preloader.style.opacity = '0';
+          preloader.style.transform = 'scale(1.04)';
+          preloader.style.filter = 'blur(10px)';
+          preloader.style.pointerEvents = 'none';
+        }, 320);
+      }
+    }, 38);
+  }
+
+  window.skipPreloader = function() {
+    if (preloaderInterval) clearInterval(preloaderInterval);
+    const preloader = document.getElementById('vaskoi-preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transform = 'scale(1.04)';
+      preloader.style.filter = 'blur(10px)';
+      preloader.style.pointerEvents = 'none';
+    }
+  }
+
+  window.replayPreloader = function() {
+    runPreloader();
+  }
+
+  // Start sequence on page load
+  setTimeout(() => {
+    runPreloader();
+  });
+
+  // Spotlight Glow Interaction for Bento Cards
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.bento-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.background = \`radial-gradient(400px circle at \${x}px \${y}px, rgba(255, 42, 27, 0.08), #0E0E12 80%)\`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.background = '';
+      });
+    });
+  });
+
+        `}
+      
