@@ -941,6 +941,11 @@ export default function Home() {
     
 <script suppressHydrationWarning dangerouslySetInnerHTML={{__html: `
   (function() {
+    // Inject global style to permanently hide preloader once done, surviving React hydration
+    const style = document.createElement('style');
+    style.textContent = 'body.preloader-done #vaskoi-preloader { opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; transition: none !important; z-index: -1 !important; }';
+    document.head.appendChild(style);
+
     const steps = [
       { percent: 18, text: "ESTABLISHING SECURE PROTOCOL...", log: "> HANDSHAKE: VASKOI_CORE_TLS ACTIVE" },
       { percent: 45, text: "LOADING DYNAMICS 365 BC ARCHITECTURE...", log: "> ATTACHING AL EXTENSION REPOSITORY & ODAV4" },
@@ -949,25 +954,10 @@ export default function Home() {
     ];
 
     let preloaderInterval = null;
+    let currentPercent = 0;
+    let stepIndex = 0;
 
     function runPreloader() {
-      const preloader = document.getElementById('vaskoi-preloader');
-      const percentEl = document.getElementById('preloader-percent');
-      const barEl = document.getElementById('preloader-bar');
-      const stepEl = document.getElementById('preloader-step-text');
-      const log1 = document.getElementById('preloader-log-1');
-      const log2 = document.getElementById('preloader-log-2');
-      const log3 = document.getElementById('preloader-log-3');
-
-      if (!preloader) return;
-
-      preloader.style.opacity = '1';
-      preloader.style.pointerEvents = 'auto';
-      preloader.style.transform = 'scale(1)';
-      preloader.style.filter = 'blur(0px)';
-      
-      let currentPercent = 0;
-      let stepIndex = 0;
       if (preloaderInterval) clearInterval(preloaderInterval);
 
       preloaderInterval = setInterval(() => {
@@ -976,6 +966,19 @@ export default function Home() {
         if (currentPercent >= 100) {
           currentPercent = 100;
           clearInterval(preloaderInterval);
+        }
+
+        // Fetch elements dynamically every tick to survive React Hydration DOM replacements
+        const p = document.getElementById('vaskoi-preloader');
+        const percentEl = document.getElementById('preloader-percent');
+        const barEl = document.getElementById('preloader-bar');
+        const stepEl = document.getElementById('preloader-step-text');
+        const log1 = document.getElementById('preloader-log-1');
+        const log2 = document.getElementById('preloader-log-2');
+        const log3 = document.getElementById('preloader-log-3');
+
+        if (p && currentPercent < 100) {
+           p.style.opacity = '1';
         }
 
         if (percentEl) percentEl.textContent = currentPercent < 10 ? '0' + currentPercent : currentPercent;
@@ -1003,19 +1006,23 @@ export default function Home() {
 
         if (currentPercent >= 100) {
           setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.transform = 'scale(1.04)';
-            preloader.style.filter = 'blur(10px)';
-            preloader.style.pointerEvents = 'none';
+            if (p) {
+                p.style.opacity = '0';
+                p.style.transform = 'scale(1.04)';
+                p.style.filter = 'blur(10px)';
+                p.style.pointerEvents = 'none';
+            }
+            // Add class to body to prevent React from ever showing it again
+            setTimeout(() => {
+                document.body.classList.add('preloader-done');
+            }, 500);
           }, 320);
         }
       }, 25);
     }
 
-    // Run it immediately!
     runPreloader();
 
-    // Attach to window just in case
     window.skipPreloader = function() {
       if (preloaderInterval) clearInterval(preloaderInterval);
       const p = document.getElementById('vaskoi-preloader');
@@ -1025,12 +1032,16 @@ export default function Home() {
         p.style.filter = 'blur(10px)';
         p.style.pointerEvents = 'none';
       }
+      document.body.classList.add('preloader-done');
     };
+    
     window.replayPreloader = function() {
+      document.body.classList.remove('preloader-done');
+      currentPercent = 0;
+      stepIndex = 0;
       runPreloader();
     };
 
-    // Bento card glow effect
     setTimeout(() => {
       const cards = document.querySelectorAll('.bento-card');
       cards.forEach(card => {
@@ -1044,7 +1055,7 @@ export default function Home() {
           card.style.background = '';
         });
       });
-    }, 1000); // give bento cards time to render
+    }, 1000);
 
   })();
 `}} />
