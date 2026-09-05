@@ -1,0 +1,37 @@
+<div className="fixed inset-0 z-[100] bg-[#08080A] flex flex-col items-center justify-center text-white overflow-hidden select-none transition-all duration-700 ease-out" id="vaskoi-preloader">
+
+<div className="absolute inset-0 tech-grid-pattern pointer-events-none opacity-60"></div>
+
+<div className="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,42,27,0.18)_0%,rgba(0,0,0,0)_70%)] glow-pulse pointer-events-none"></div>
+
+<div className="absolute inset-0 terminal-scanline pointer-events-none opacity-40"></div>
+
+<div className="absolute top-6 left-6 right-6 flex items-center justify-between text-text-tertiary font-code-inline text-body-sm z-10 border-b border-border-subtle/50 pb-3">
+<div className="flex items-center gap-3">
+<span className="inline-block w-2 h-2 bg-border-interactive animate-ping"></span>
+<span className="tracking-widest uppercase text-text-secondary">SYSTEM_BOOT // INITIALIZATION_SEQUENCE</span>
+</div>
+<div className="hidden sm:flex items-center gap-4 text-text-tertiary">
+<span>NODE: VASKOI_PROD_HOST</span>
+<span>SECURITY: ENCRYPTED_TLS_1.3</span>
+<span className="text-tertiary">KERNEL: ACTIVE</span>
+</div>
+</div>
+
+<div className="relative z-10 flex flex-col items-center max-w-xl w-full px-6">
+
+<div className="relative w-28 h-28 mb-8 flex items-center justify-center">
+
+<div className="absolute inset-0 border border-border-subtle rounded-none animate-[spin_10s_linear_infinite]"></div>
+<div className="absolute inset-1 border-t-2 border-r-2 border-border-interactive/80 rounded-none animate-[spin_5s_linear_infinite]"></div>
+<div className="absolute inset-3 border-b border-l border-tertiary/70 rounded-none animate-[spin_7s_linear_infinite_reverse]"></div>
+
+<div className="relative flex flex-col items-center justify-center bg-surface-base px-3 py-2 border border-border-subtle shadow-[0_0_25px_rgba(255,42,27,0.25)]">
+<span className="font-headline-sm text-headline-sm font-bold tracking-tight text-white">VASKOI</span>
+<span className="font-code-inline text-[9px] text-border-interactive tracking-widest">{"// ARCH"}</span>
+</div>
+
+<span className="absolute -top-1 -left-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span className="absolute -top-1 -right-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span className="absolute -bottom-1 -left-1 text-[10px] text-text-tertiary font-code-inline">+</span>
+<span className="absolute -bottom-1 -right-1 text-[10px] text-text-tertiary font-code-in
