@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import { use } from 'react';
 import { notFound } from 'next/navigation';
 import CTASection from '@/components/CTASection';
 
@@ -54,8 +55,9 @@ const PROJECTS: Record<string, any> = {
   }
 };
 
-export default function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const project = PROJECTS[params.slug];
+export default function CaseStudyPage({ params }: { params: any }) {
+  const resolvedParams = use(params as Promise<{ slug: string }>);
+  const project = PROJECTS[resolvedParams.slug];
 
   if (!project) {
     notFound();

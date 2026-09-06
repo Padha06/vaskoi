@@ -368,7 +368,7 @@ export default function Home() {
 
 <div className="bg-surface-base border border-border-subtle group hover:border-border-interactive transition-all duration-300 flex flex-col relative overflow-hidden">
 <div className="relative h-48 md:h-60 w-full overflow-hidden bg-surface-deep">
-<img alt="ScanGo WMS scanner system running" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XMkRmAecuOTznhX8AkA2HvYfq2OTb0JzpcXxCQvDU_e4n1LC-n4V5xXudCI1aFqUrqinFsmkUIZ3Ji_oEFnz3NypGHYyOI2GkcEeHs23K99yMl9ytOJICA_hXFndo3CsHAMxUvMsUiVUl22Q9hq1o3pLNpaKzdZieLpRvWU6O3-auFl3TA-O-P75XzeQlBaMiXoUjhwKZUCrw2a5TspCw-jZg4tpp03-HcUH4B4W7ys75wql8VCofUUw"/>
+<img alt="ScanGo WMS scanner system running" className="w-full h-full object-contain md:object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/scango-wms.jpg"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80"></div>
 <span className="absolute top-space-sm left-space-sm px-space-sm py-space-2xs bg-border-interactive text-white font-label-caps text-label-caps uppercase tracking-wider">
             FEATURED RIG
@@ -381,7 +381,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: SCAN-GO // WMS</span>
-<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">ScanGo WMS Engine</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -407,7 +407,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: BC_CUSTOM_DASH</span>
-<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">Dynamics 365 BC Custom Cockpit</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -433,7 +433,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: ESIGN_PIPELINE</span>
-<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">E-Signature Workflow Integration</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -459,7 +459,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: AFTERLIGHT_STUDIO</span>
-<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">AfterLight Creative Studio</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -485,7 +485,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: DAP_CANADA</span>
-<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">DAP Canada Client Portal</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -511,7 +511,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: ONE_STOP_COMP</span>
-<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">One Stop Computer Shop</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">

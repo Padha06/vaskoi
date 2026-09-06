@@ -27,19 +27,29 @@ export default function ContactPage() {
   const onSubmit = async (data: FormData) => {
     setSending(true);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setSubmitted(true);
-        reset();
-      }
-    } catch {
-      alert("Something went wrong. Please try again.");
+      const templateParams = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone || 'N/A',
+        service: data.projectType || 'N/A',
+        message: data.message,
+      };
+
+      await emailjs.send(
+        'service_co7zyuh',
+        'template_7rvpdxr',
+        templateParams,
+        { publicKey: 'jwKCtJuUAK8s1gFNv' }
+      );
+
+      setSubmitted(true);
+      reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setSending(false);
     }
-    setSending(false);
   };
 
   return (
