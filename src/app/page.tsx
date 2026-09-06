@@ -216,10 +216,10 @@ export default function Home() {
 <span className="font-code-inline text-body-sm text-text-tertiary">#CASE_01</span>
 <span className="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Retail Tech</span>
 </div>
-<div className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
-<span>EXPLORE</span>
-<span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
-</div>
+<Link href="/portfolio/ecommerce-platform" className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors z-20">
+  <span>KNOW MORE</span>
+  <span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_forward</span>
+  </Link>
 </div>
 <div className="p-space-xl">
 <h3 className="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
@@ -258,10 +258,10 @@ export default function Home() {
 <span className="font-code-inline text-body-sm text-text-tertiary">#CASE_02</span>
 <span className="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Internal Tools</span>
 </div>
-<div className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
-<span>EXPLORE</span>
-<span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
-</div>
+<Link href="/portfolio/operations-telemetry-platform" className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors z-20">
+  <span>KNOW MORE</span>
+  <span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_forward</span>
+  </Link>
 </div>
 <div className="p-space-xl">
 <h3 className="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
@@ -288,10 +288,10 @@ export default function Home() {
 <span className="font-code-inline text-body-sm text-text-tertiary">#CASE_03</span>
 <span className="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Mobile Systems</span>
 </div>
-<div className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
-<span>EXPLORE</span>
-<span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
-</div>
+<Link href="/portfolio/field-service-app" className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors z-20">
+  <span>KNOW MORE</span>
+  <span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_forward</span>
+  </Link>
 </div>
 <div className="p-space-xl">
 <h3 className="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
@@ -318,10 +318,10 @@ export default function Home() {
 <span className="font-code-inline text-body-sm text-text-tertiary">#CASE_04</span>
 <span className="font-label-caps text-label-caps uppercase px-space-xs py-space-2xs bg-surface-elevated text-text-primary border border-border-subtle">Enterprise ERP</span>
 </div>
-<div className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors">
-<span>EXPLORE</span>
-<span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
-</div>
+<Link href="/portfolio/dynamics-365-bc-custom" className="flex items-center gap-space-xs font-code-inline text-body-sm text-text-secondary group-hover:text-border-interactive transition-colors z-20">
+  <span>KNOW MORE</span>
+  <span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_forward</span>
+  </Link>
 </div>
 <div className="p-space-xl">
 <h3 className="font-headline-md text-headline-md text-text-primary group-hover:text-white mb-space-sm transition-colors">
@@ -381,10 +381,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: SCAN-GO // WMS</span>
-<Link href="/portfolio/scango-wms-engine" className="flex items-center gap-1 text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all">
-    <span className="text-xs font-bold uppercase tracking-wider">Know More</span>
-    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-  </Link>
+<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">ScanGo WMS Engine</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -410,10 +407,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: BC_CUSTOM_DASH</span>
-<Link href="/portfolio/dynamics-365-bc-custom-cockpit" className="flex items-center gap-1 text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all">
-    <span className="text-xs font-bold uppercase tracking-wider">Know More</span>
-    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-  </Link>
+<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">Dynamics 365 BC Custom Cockpit</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -439,10 +433,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: ESIGN_PIPELINE</span>
-<Link href="/portfolio/e-signature-workflow-integration" className="flex items-center gap-1 text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all">
-    <span className="text-xs font-bold uppercase tracking-wider">Know More</span>
-    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-  </Link>
+<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">E-Signature Workflow Integration</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -468,10 +459,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: AFTERLIGHT_STUDIO</span>
-<Link href="/portfolio/afterlight-creative-studio" className="flex items-center gap-1 text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all">
-    <span className="text-xs font-bold uppercase tracking-wider">Know More</span>
-    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-  </Link>
+<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">AfterLight Creative Studio</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -497,10 +485,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: DAP_CANADA</span>
-<Link href="/portfolio/dap-canada-client-portal" className="flex items-center gap-1 text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all">
-    <span className="text-xs font-bold uppercase tracking-wider">Know More</span>
-    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-  </Link>
+<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">DAP Canada Client Portal</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">
@@ -526,10 +511,7 @@ export default function Home() {
 <div>
 <div className="flex items-center justify-between mb-space-xs">
 <span className="font-code-inline text-body-sm text-border-interactive">SYS: ONE_STOP_COMP</span>
-<Link href="/portfolio/one-stop-computer-shop" className="flex items-center gap-1 text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all">
-    <span className="text-xs font-bold uppercase tracking-wider">Know More</span>
-    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-  </Link>
+<span className="material-symbols-outlined text-text-secondary group-hover:text-border-interactive group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
 </div>
 <h3 className="font-headline-sm text-headline-sm text-text-primary mb-space-xs group-hover:text-white">One Stop Computer Shop</h3>
 <p className="font-body-md text-body-md text-text-secondary mb-space-md">

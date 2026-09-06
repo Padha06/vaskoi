@@ -1,79 +1,56 @@
+"use client";
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import CTASection from '@/components/CTASection';
 
 const PROJECTS: Record<string, any> = {
-  'scango-wms-engine': {
-    title: 'ScanGo WMS Engine',
-    sys: 'SYS: SCAN-GO // WMS',
-    image: 'https://lh3.googleusercontent.com/aida/AEtjO1XMkRmAecuOTznhX8AkA2HvYfq2OTb0JzpcXxCQvDU_e4n1LC-n4V5xXudCI1aFqUrqinFsmkUIZ3Ji_oEFnz3NypGHYyOI2GkcEeHs23K99yMl9ytOJICA_hXFndo3CsHAMxUvMsUiVUl22Q9hq1o3pLNpaKzdZieLpRvWU6O3-auFl3TA-O-P75XzeQlBaMiXoUjhwKZUCrw2a5TspCw-jZg4tpp03-HcUH4B4W7ys75wql8VCofUUw',
-    description: 'Offline-first mobile warehouse execution system directly connected to Microsoft Dynamics 365 Business Central. Barcode decoders running at sub-50ms latency.',
-    details: [
-      { label: 'Client Type', value: 'Mid-Market Distribution' },
-      { label: 'Timeline', value: '4 months' },
-      { label: 'Tech Stack', value: 'Business Central, AL, Barcode Scanning, Azure' }
-    ],
-    body: 'ScanGo transformed warehouse operations by shifting from manual tracking to an offline-first mobile warehouse execution system. Connected directly to Microsoft Dynamics 365 Business Central, it processes barcode scans with sub-50ms latency, enabling real-time inventory visibility and boosting picking accuracy by over 17%.'
-  },
-  'dynamics-365-bc-custom-cockpit': {
-    title: 'Dynamics 365 BC Custom Cockpit',
-    sys: 'SYS: BC_CUSTOM_DASH',
+  'ecommerce-platform': {
+    title: 'High-Conversion E-Commerce Architecture',
+    sys: 'SYS: ECOMMERCE_CORE',
     image: '/dynamics-365.png',
-    description: 'A tailored ERP dashboard providing real-time analytics and streamlined operational controls.',
-    details: [
-      { label: 'Client Type', value: 'Enterprise Manufacturing' },
-      { label: 'Timeline', value: '3 months' },
-      { label: 'Tech Stack', value: 'Dynamics 365 BC, Power BI, Azure' }
-    ],
-    body: 'We engineered a highly customized dashboard on top of Dynamics 365 Business Central to surface critical operational metrics. This cockpit empowers managers to make data-driven decisions instantly, eliminating hours of manual reporting and providing a unified view of production.'
-  },
-  'e-signature-workflow-integration': {
-    title: 'E-Signature Workflow Integration',
-    sys: 'SYS: ESIGN_PIPELINE',
-    image: '/esignature.png',
-    description: 'Automated document signing pipeline seamlessly connected with existing CRM and ERP systems.',
-    details: [
-      { label: 'Client Type', value: 'Financial Services' },
-      { label: 'Timeline', value: '2 months' },
-      { label: 'Tech Stack', value: 'Node.js, Next.js, API Integration' }
-    ],
-    body: 'By integrating advanced e-signature capabilities directly into the client\'s existing workflow, we reduced document turnaround time by 80%. The system securely tracks document states, sends automated follow-ups, and securely archives finalized contracts.'
-  },
-  'afterlight-creative-studio': {
-    title: 'AfterLight Creative Studio',
-    sys: 'SYS: AFTERLIGHT_STUDIO',
-    image: '/afterlight.png',
-    description: 'A cutting-edge digital showcase platform built for high-performance media rendering.',
-    details: [
-      { label: 'Client Type', value: 'Creative Agency' },
-      { label: 'Timeline', value: '3 months' },
-      { label: 'Tech Stack', value: 'Next.js, Tailwind CSS, Framer Motion' }
-    ],
-    body: 'Designed for a top-tier creative agency, this platform delivers stunning visuals with lightning-fast load times. We leveraged advanced caching and optimized media pipelines to ensure high-fidelity video and image assets never compromise the user experience.'
-  },
-  'dap-canada-client-portal': {
-    title: 'DAP Canada Client Portal',
-    sys: 'SYS: DAP_CANADA',
-    image: '/dap-canada.png',
-    description: 'Secure, multi-tenant client portal engineered for seamless data exchange and account management.',
-    details: [
-      { label: 'Client Type', value: 'B2B Enterprise' },
-      { label: 'Timeline', value: '5 months' },
-      { label: 'Tech Stack', value: 'React, Node.js, PostgreSQL' }
-    ],
-    body: 'This secure portal centralizes client interactions, providing a single pane of glass for document sharing, ticketing, and account health. With robust multi-tenant architecture, it handles thousands of concurrent users with enterprise-grade security.'
-  },
-  'one-stop-computer-shop': {
-    title: 'One Stop Computer Shop',
-    sys: 'SYS: ONE_STOP_COMP',
-    image: '/one-stop.jpg',
-    description: 'A highly optimized e-commerce storefront for a specialized hardware retailer.',
+    description: 'Architected a headless multi-currency catalog with sub-100ms server-side rendering, integrated real-time inventory caching, and friction-free payment settlement.',
     details: [
       { label: 'Client Type', value: 'Retail E-Commerce' },
       { label: 'Timeline', value: '3 months' },
-      { label: 'Tech Stack', value: 'Next.js, Stripe, Headless CMS' }
+      { label: 'Tech Stack', value: 'Next.js 14, React Server Components, Tailwind CSS' }
     ],
-    body: 'We completely overhauled the digital presence for this hardware retailer. The new headless e-commerce setup integrates seamlessly with their inventory system, providing lightning-fast product searches and a frictionless checkout experience.'
+    body: 'We engineered a high-performance headless architecture for a modern retail brand. By decoupling the frontend from the backend e-commerce engine, we achieved sub-100ms page loads and real-time inventory synchronization. The solution significantly boosted mobile conversion rates and provided a scalable foundation for global expansion.'
+  },
+  'operations-telemetry-platform': {
+    title: 'Operations & Telemetry Command Platform',
+    sys: 'SYS: OPS_COMMAND',
+    image: '/esignature.png',
+    description: 'Unified mission-critical resource allocation, contract lifecycle, and client billings into a single low-latency cockpit.',
+    details: [
+      { label: 'Client Type', value: 'Enterprise Operations' },
+      { label: 'Timeline', value: '4 months' },
+      { label: 'Tech Stack', value: 'Node.js, PostgreSQL, WebSockets' }
+    ],
+    body: 'Designed for a high-volume enterprise, this command platform acts as the central nervous system for their daily operations. By consolidating disjointed legacy tools into a unified, real-time dashboard, we enabled zero-latency decision making, automated contract lifecycles, and streamlined client billing processes.'
+  },
+  'field-service-app': {
+    title: 'Field Workforce & Offline Sync Engine',
+    sys: 'SYS: FIELD_OPS',
+    image: '/afterlight.png',
+    description: 'Engineered an offline-first mobile application capable of bidirectional queuing and conflict resolution under zero-connectivity field conditions.',
+    details: [
+      { label: 'Client Type', value: 'Logistics & Field Service' },
+      { label: 'Timeline', value: '5 months' },
+      { label: 'Tech Stack', value: 'React Native, SQLite, Custom Sync Engine' }
+    ],
+    body: 'Field technicians were losing hours every week due to spotty cellular connections. We developed a robust offline-first mobile application that queues actions locally and intelligently syncs with the central database when connectivity is restored. This resolved data conflicts automatically and empowered the workforce to operate without interruptions.'
+  },
+  'dynamics-365-bc-custom': {
+    title: 'Microsoft Dynamics 365 BC Custom Engineering',
+    sys: 'SYS: BC_CUSTOM_EXT',
+    image: '/dap-canada.png',
+    description: 'Architected custom AL extensions, automated multi-stage invoice validation pipelines, and integrated low-code webhooks bridging modern SaaS with corporate ERP backbones.',
+    details: [
+      { label: 'Client Type', value: 'B2B Distribution' },
+      { label: 'Timeline', value: '6 months' },
+      { label: 'Tech Stack', value: 'AL Language, Business Central, Azure Logic Apps' }
+    ],
+    body: 'We pushed the boundaries of Microsoft Dynamics 365 Business Central by developing advanced AL extensions that automated the client\'s massive invoice validation pipelines. Integrating seamlessly with modern SaaS applications via Azure Logic Apps, the custom engineering reduced manual accounting errors by 98% and accelerated the monthly financial close.'
   }
 };
 
@@ -88,10 +65,11 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
     <div className="min-h-screen bg-surface-deep pt-24 pb-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <Link href="/#portfolio" className="inline-flex items-center gap-2 text-text-secondary hover:text-white transition-colors mb-8 font-code-inline text-sm">
+        {/* We use a standard anchor tag to return to homepage case-studies section to ensure full reload which fixes the preloader hydration bug on soft-navigation */}
+        <a href="/#case-studies" onClick={(e) => { e.preventDefault(); window.location.href = "/#case-studies"; }} className="inline-flex items-center gap-2 text-text-secondary hover:text-white transition-colors mb-8 font-code-inline text-sm">
           <span className="material-symbols-outlined text-[18px]">arrow_back</span>
           RETURN_TO_SYSTEM
-        </Link>
+        </a>
 
         <div className="bg-surface-base border border-border-subtle rounded-xl overflow-hidden mb-12 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
           <div className="relative h-64 md:h-96 w-full bg-[#08080A]">
@@ -99,9 +77,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <img 
               src={project.image} 
               alt={project.title} 
-              className="w-full h-full object-contain md:object-cover object-top"
+              className="w-full h-full object-contain md:object-cover object-top opacity-50"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-90"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/80 to-transparent"></div>
             <div className="absolute bottom-6 left-6 right-6">
               <span className="inline-block font-code-inline text-body-sm text-border-interactive mb-2 px-2 py-1 bg-surface-deep/80 border border-border-subtle">
                 {project.sys}

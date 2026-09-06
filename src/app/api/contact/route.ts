@@ -25,6 +25,7 @@ export async function POST(request: Request) {
           name,
           email,
           phone: phone || 'N/A',
+          service: projectType || 'N/A',
           projectType: projectType || 'N/A',
           timeline: timeline || 'N/A',
           budget: budget || 'N/A',

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
 interface FormData {
