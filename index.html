@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VASKOI BIOPHARMA — Next-Generation Single-Molecule Proteomics & Drug Discovery</title>
+  <meta name="description" content="Vaskoi Biopharma decodes the human proteome through spatial molecular expansion and single-molecule resolution protein sequencing to accelerate therapeutic target discovery." />
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='30,10 50,10 20,90 0,90' fill='%2300d2ff'/><polygon points='60,10 80,10 50,90 30,90' fill='%23ffffff'/></svg>" />
+  
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Lenis Smooth Momentum Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- ======================================================================
+       THE VASKOI APERTURE PRELOADER (Dual Curtain Split Reveal)
+       ====================================================================== -->
+  <div id="vaskoi-preloader" aria-hidden="true">
+    <!-- Top Curtain Slab (57% height) -->
+    <div class="loader-curtain-top">
+      <div class="loader-center-hub">
+        <div class="loader-brand-row">
+          <svg class="loader-brand-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 8L26 8L8 52L-6 52L12 8Z" fill="currentColor" transform="translate(14, 0)"/>
+            <path d="M32 8L46 8L28 52L14 52L32 8Z" fill="currentColor" transform="translate(14, 0)"/>
+            <circle cx="12" cy="18" r="4" fill="currentColor" />
+            <circle cx="48" cy="42" r="4" fill="currentColor" />
+          </svg>
+          <div class="loader-brand-name">VASKOI</div>
+        </div>
+        <div class="loader-progress-track">
+          <div id="loader-progress-bar" class="loader-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Curtain Slab (44% height) -->
+    <div class="loader-curtain-bottom">
+      <div class="loader-meta-row">
+        <span>INITIALIZING MOLECULAR SEQUENCING PLATFORM</span>
+        <span>(<span id="loader-percent" class="loader-counter">0%</span>)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SITE NAVIGATION HEADER
+       ====================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="header-brand-pill">
+        <span class="brand-name">vaskoi</span><span class="brand-slash">//</span><span class="brand-suffix">bio</span>
+      </a>
+
+      <div class="header-nav-cluster">
+        <nav class="nav-pill-group">
+          <a href="#technology" class="nav-pill">Technology</a>
+          <a href="#sequence-track" class="nav-pill">Molecular Trace</a>
+          <a href="#capabilities" class="nav-pill">Capabilities</a>
+          <a href="#benchmarks" class="nav-pill">Benchmarks</a>
+        </nav>
+
+        <a href="#request-demo" class="nav-btn-pill open-demo-modal">
+          <span>Contact Us</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ======================================================================
+         HERO SECTION (High-Definition Video Background + 3D Camera Tilt)
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="hero-video-wrap">
+        <video id="hero-video" class="hero-video" autoplay muted loop playsinline poster="assets/images/stage1.png">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay-gradient"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-pill-badge">Next-Generation Single-Molecule Proteomics</div>
+        <h1 class="hero-title">
+          Protein Sequencing by <br />
+          <span class="hero-title-highlight">Molecular Expansion</span>
+        </h1>
+        <p class="hero-description">
+          Vaskoi Biopharma decodes the complete human proteome through spatial expansion of amino acids at single-molecule resolution—empowering high-throughput discovery for novel therapeutics and precision medicine.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#technology" class="btn btn-primary">
+            <span>Explore Technology</span>
+            <span class="btn-icon">↓</span>
+          </a>
+          <a href="#sequence-track" class="btn btn-outline">
+            <span>View Molecular Trace</span>
+            <span class="btn-icon">→</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="#technology" class="hero-scroll-indicator">
+        <span>Scroll to Explore</span>
+        <div class="scroll-mouse-icon">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ======================================================================
+         TECHNOLOGY INTRO SECTION (Clinical Alabaster)
+         ====================================================================== -->
+    <section id="technology" class="section-light">
+      <div class="container-standard">
+        <div class="section-header-meta">
+          <span class="meta-number">01</span>
+          <span>Technology Architecture // ProSE™ Platform</span>
+          <span class="meta-year">2026</span>
+        </div>
+
+        <div class="grid-intro">
+          <div class="intro-headline-wrap">
+            <div class="intro-badge">Proprietary Biochemistry</div>
+            <h2 class="intro-title">
+              Revolutionizing Proteomics with Spatial Expansion.
+            </h2>
+            <p class="intro-lead-text">
+              Legacy protein sequencing has long struggled with optical crowding, signal degradation, and post-translational modifications. Vaskoi physically expands peptide chains to read every residue with uncompromised fidelity.
+            </p>
+            <a href="#sequence-track" class="btn btn-primary">
+              <span>Inspect Sequencing Stages</span>
+              <span class="btn-icon">→</span>
+            </a>
+          </div>
+
+          <!-- Interactive Accordion Breakdown -->
+          <div class="tech-accordion">
+            <div class="accordion-item active">
+              <div class="accordion-header">
+                <div class="accordion-title-row">
+                  <span class="accordion-num">01</span>
+                  <h3 class="accordion-title">Sample Preparation & Functionalization</h3>
+                </div>
+                <div class="accordion-toggle-icon"></div>
+              </div>
+              <div class="accordion-body">
+                <p>
+                  Proteins and intact peptide fragments are functionalized using high-affinity molecular linkers attached selectively to terminal residues, preparing the biological library for controlled synthesis without degradation.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <div class="accordion-title-row">
+                  <span class="accordion-num">02</span>
+                  <h3 class="accordion-title">Ordered Molecular Expansion</h3>
+                </div>
+                <div class="accordion-toggle-icon"></div>
+              </div>
+              <div class="accordion-body">
+                <p>
+                  Each amino acid is sequentially spaced along an engineered backbone matrix in its native linear sequence, eliminating molecular overcrowding and expanding physical resolution beyond optical diffraction limits.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <div class="accordion-title-row">
+                  <span class="accordion-num">03</span>
+                  <h3 class="accordion-title">Amino Acid & PTM Sequencing</h3>
+                </div>
+                <div class="accordion-toggle-icon"></div>
+              </div>
+              <div class="accordion-body">
+                <p>
+                  The assembled Vaskoi ProSE macromolecule passes through high-bandwidth nanopores, measuring distinctive ionic current blockades that provide unbiased discrimination across all 20 natural amino acids and key PTMs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         HIGH-IMPACT STATEMENT SECTION
+         ====================================================================== -->
+    <section class="section-statement">
+      <div class="container-standard">
+        <p class="statement-text">
+          Vaskoi Biopharma leverages <u>spatial expansion of amino acids</u> to achieve single-molecule discrimination of <u>all 20 amino acids and post-translational modifications</u> directly from raw biological fluids.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         THE 300VH SCROLL-DRIVEN SEQUENCE CANVAS SECTION
+         150-Frame AVIF Animation Scrubbing with Synchronized HUD Cards
+         ====================================================================== -->
+    <!-- ======================================================================
+         THE 300VH SCROLL-DRIVEN SEQUENCE CANVAS SECTION
+         150-Frame AVIF Animation Scrubbing with Horizontal Floating HUD Pills
+         ====================================================================== -->
+    <section id="sequence-track" class="sequence-section">
+      <div class="sequence-sticky-wrap">
+        <!-- Canvas Drawing Surface (Clear, No Dimming Vignette) -->
+        <canvas id="sequence-canvas"></canvas>
+
+        <!-- Stage 01 Horizontal Floating Pill Layer -->
+        <div class="sequence-hud-stage-layer active" data-stage="0">
+          <div class="hud-pill-group-left">
+            <div class="hud-pill pill-num">1</div>
+            <div class="hud-pill pill-title">SAMPLE PREPARATION</div>
+          </div>
+          <div class="hud-center-spacer"></div>
+          <div class="hud-pill-group-right">
+            <div class="hud-pill pill-desc">REAGENT KITS FUNCTIONALIZE PEPTIDES</div>
+          </div>
+        </div>
+
+        <!-- Stage 02 Horizontal Floating Pill Layer -->
+        <div class="sequence-hud-stage-layer" data-stage="1">
+          <div class="hud-pill-group-left">
+            <div class="hud-pill pill-num">2</div>
+            <div class="hud-pill pill-title">MOLECULAR EXPANSION</div>
+          </div>
+          <div class="hud-center-spacer"></div>
+          <div class="hud-pill-group-right">
+            <div class="hud-pill pill-desc">ORDERED EXPANSION OF AMINO ACIDS</div>
+          </div>
+        </div>
+
+        <!-- Stage 03 Horizontal Floating Pill Layer -->
+        <div class="sequence-hud-stage-layer" data-stage="2">
+          <div class="hud-pill-group-left">
+            <div class="hud-pill pill-num">3</div>
+            <div class="hud-pill pill-title">AMINO ACID SEQUENCING</div>
+          </div>
+          <div class="hud-center-spacer"></div>
+          <div class="hud-pill-group-right">
+            <div class="hud-pill pill-desc">UNBIASED DISCRIMINATION OF ALL 20 AAS + PTMS</div>
+          </div>
+        </div>
+
+        <!-- Subtle Top Minimal Progress Tag -->
+        <div class="sequence-mini-tracker">
+          <span id="hud-progress-counter">STAGE 01 / 03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CAPABILITIES & PERFORMANCE METRICS SECTION
+         ====================================================================== -->
+    <section id="capabilities" class="section-metrics">
+      <div class="container-standard">
+        <div class="section-header-meta" style="border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.5);">
+          <span class="meta-number" style="color: var(--color-white);">02</span>
+          <span>Platform Specifications // Quantitative Benchmarks</span>
+          <span class="meta-year">2026</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 3.8vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em;">
+          Unprecedented Depth. Massively Parallel.
+        </h2>
+        <p style="font-size: 1.2rem; color: var(--color-gray-400); max-width: 650px; margin-top: 1rem;">
+          Engineered for biopharma pipelines requiring true de novo sequencing without database bias or library dropouts.
+        </p>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number" data-target="100" data-suffix="%">0%</div>
+            <div class="metric-label">De Novo Coverage</div>
+            <div class="metric-desc">Complete end-to-end sequencing with zero reliance on existing genomic or proteomic databases.</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number"><span class="metric-number-accent">20</span> / 20</div>
+            <div class="metric-label">Amino Acid Discrimination</div>
+            <div class="metric-desc">Unbiased resolution of all 20 standard residues including isobaric pairs (Leu/Ile) and PTM variants.</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number" data-target="100" data-suffix="M+">0M+</div>
+            <div class="metric-label">Parallel Reads / Run</div>
+            <div class="metric-desc">Massively parallel nanopore array architectures designed for high-throughput screening.</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">&lt; <span class="metric-number-accent">1</span> hr</div>
+            <div class="metric-label">Sample-to-Sequence</div>
+            <div class="metric-desc">Automated fluidic protocol requiring minimal manual intervention and sub-picomole input volumes.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         COMPARATIVE ADVANTAGE MATRIX
+         ====================================================================== -->
+    <section id="benchmarks" class="section-comparison">
+      <div class="container-standard">
+        <div class="section-header-meta" style="border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.5);">
+          <span class="meta-number" style="color: var(--color-white);">03</span>
+          <span>Comparative Proteomics // Industry Benchmark</span>
+          <span class="meta-year">2026</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 3.8vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em;">
+          Surpassing Traditional Analytical Paradigms.
+        </h2>
+
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Technology Parameter</th>
+                <th class="highlight-col">Vaskoi Molecular Expansion (ProSE™)</th>
+                <th>Tandem Mass Spectrometry (MS/MS)</th>
+                <th>Edman Degradation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-title">Sequencing Mode</td>
+                <td class="highlight-col"><span class="status-badge-positive">✓ Full De Novo Single Molecule</span></td>
+                <td>Database matching / Hybrid</td>
+                <td>N-terminal sequential</td>
+              </tr>
+              <tr>
+                <td class="feature-title">All 20 Amino Acid Discrimination</td>
+                <td class="highlight-col"><span class="status-badge-positive">✓ Yes (Direct Electrical Signatures)</span></td>
+                <td><span class="status-badge-negative">✗ Struggles with Isobars (Leu/Ile)</span></td>
+                <td>Limited</td>
+              </tr>
+              <tr>
+                <td class="feature-title">PTM Detection (Phospho, Glyco, etc.)</td>
+                <td class="highlight-col"><span class="status-badge-positive">✓ Direct Single-Molecule Profiling</span></td>
+                <td>Complex enrichment required</td>
+                <td><span class="status-badge-negative">✗ Destroys labile modifications</span></td>
+              </tr>
+              <tr>
+                <td class="feature-title">Input Sample Quantity</td>
+                <td class="highlight-col"><span class="status-badge-positive">✓ Sub-picomole (&lt; 10 ng)</span></td>
+                <td>Micrograms required</td>
+                <td>Milligrams required</td>
+              </tr>
+              <tr>
+                <td class="feature-title">Dynamic Range</td>
+                <td class="highlight-col"><span class="status-badge-positive">✓ &gt; 10⁶ (Single-Molecule Counting)</span></td>
+                <td>10³ - 10⁴ (Ion suppression)</td>
+                <td>10²</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PARTNER DEMO & CONSULTATION CTA SECTION
+         ====================================================================== -->
+    <section id="request-demo" class="section-cta">
+      <div class="cta-box">
+        <h2 class="cta-title">Accelerate Your Biopharma Pipeline with Vaskoi.</h2>
+        <p class="cta-description">
+          Collaborate with our scientific team to run validation cohorts on your therapeutic targets, bispecific antibodies, or cellular proteomes.
+        </p>
+        <button class="btn btn-primary open-demo-modal" style="font-size: 0.95rem; padding: 1.1rem 2.4rem;">
+          <span>Schedule Client Demonstration</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       SITE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container-standard">
+      <div class="footer-top">
+        <div>
+          <div style="font-size: 1.8rem; font-weight: 700; letter-spacing: 0.16em; margin-bottom: 0.8rem;">VASKOI</div>
+          <p style="color: var(--color-gray-400); max-width: 380px; font-size: 0.95rem;">
+            Decoding biology at single-molecule scale to pioneer transformative precision therapeutics.
+          </p>
+        </div>
+
+        <div class="footer-locations">
+          <div class="location-item">
+            <h4>Global Headquarters</h4>
+            <p>180 Montgomery St, Suite 1400<br />San Francisco, CA 94104</p>
+          </div>
+          <div class="location-item">
+            <h4>Innovation Hub</h4>
+            <p>Kendall Square, Main St<br />Cambridge, MA 02142</p>
+          </div>
+          <div class="location-item">
+            <h4>European Research</h4>
+            <p>Novartis Campus, Fabrikstrasse<br />4056 Basel, Switzerland</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 VASKOI BIOPHARMA, INC. ALL RIGHTS RESERVED.</div>
+        <div>PROTEIN SEQUENCING BY EXPANSION (ProSE™) IS A REGISTERED TRADEMARK.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       INTERACTIVE CLIENT DEMO INQUIRY MODAL
+       ====================================================================== -->
+  <div id="demo-modal" class="modal-backdrop">
+    <div class="modal-container">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">✕</button>
+      
+      <div class="modal-header">
+        <span class="modal-badge">CLIENT DEMONSTRATION & PILOT ACCESS</span>
+        <h3 class="modal-title">Request Vaskoi Platform Demo</h3>
+      </div>
+
+      <form id="demo-request-form">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Dr. Alexandra Chen" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Biopharma Institution / Organization</label>
+          <input type="text" class="form-input" placeholder="Genentech / Novartis / Vertex" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Work Email</label>
+          <input type="email" class="form-input" placeholder="a.chen@institution.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Primary Application Area</label>
+          <select class="form-select">
+            <option>Oncology Target Discovery & De Novo Neoantigen Profiling</option>
+            <option>Antibody & Protein Therapeutic QC / PTM Characterization</option>
+            <option>Single-Cell & Spatial Clinical Proteomics</option>
+            <option>Neurodegenerative Disease Biomarker Discovery</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+          <span>Submit Inquiry for Demo</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </form>
+
+      <div id="form-feedback" class="form-feedback-card">
+        <svg class="feedback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <h4 class="feedback-title">Demo Inquiry Transmitted</h4>
+        <p class="feedback-text">
+          Our scientific solutions director will reach out within 24 hours to coordinate customized sequence runs and technical platform access.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="js/loader.js"></script>
+  <script src="js/canvasSequence.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
