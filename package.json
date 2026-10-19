@@ -1,0 +1,9 @@
+{
+  "name": "vaskoi",
+  "version": "1.0.0",
+  "description": "Vaskoi Biopharma Next-Gen Proteomics Platform",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static build complete'"
+  }
+}
